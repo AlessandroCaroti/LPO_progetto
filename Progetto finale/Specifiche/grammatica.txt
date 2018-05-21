@@ -31,7 +31,7 @@ SINTASSI DELLE ESPRESSIONI
    -operatori binari: {&&, ==}; Associano entrambi a sinistra
    -operatori unari: {!, opt, empty, def, get}; Hanno la precedenza sugli operatoribinari infissi
    -Exp ::= (quello che c'era per il lab 10) | Exp && Exp | Exp == Exp | !Exp | opt Exp  |empty Exp | def Exp | get Exp
-   -opt,empty,defegetsono nuove keyword
+   -opt, empty, def e get sono nuove keyword
    -Per trattare correttamente il riconoscimento dei lessemi = e == tramite un’espressione regolare, elencare prima ==; quindi l’espressione regolare di forma == | = `e quella corretta
    Precedenza operatori binari:
       1) &&    precedenza più bassa
@@ -47,9 +47,13 @@ SINTASSI DEGLI STATEMENT
    
 
 DA COMPLETARE E DISAMBIGUARE
+cose aggiunte:
+      1)aggiunto in EXP : BOOL e BINARY
+
+
 Prog ::= StmtSeq 'EOF'
 StmtSeq ::= Stmt | Stmt ';' StmtSeq
 Stmt ::= 'var' ID '=' Exp | ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}'
 ExpSeq ::= Exp | Exp ',' ExpSeq
-Exp ::= Exp BinOp Exp | '-' Exp| '[' ExpSeq ']' | NUM | ID | '(' Exp ')'
+Exp ::= Exp BinOp Exp | '-' Exp| '[' ExpSeq ']' | NUM | ID  | BOOL | BINARY | '(' Exp ')'
 BinOp ::= '::' | '+' | '*'
