@@ -1,4 +1,6 @@
-//GRAMMATICA LABORATORI 10/11
+******GRAMMATICA LABORATORI 10/11**********
+
+Grammatica BNF ambigua: 
 
 Prog ::= StmtSeq 'EOF'
 StmtSeq ::= Stmt | Stmt ';' StmtSeq
@@ -7,7 +9,9 @@ ExpSeq ::= Exp | Exp ',' ExpSeq
 Exp ::= Exp BinOp Exp | '-' Exp| '[' ExpSeq ']' | NUM | ID | '(' Exp ')'
 BinOp ::= '::' | '+' | '*'
 
-Grammatica non ambigua
+***********************************************************************************************************
+
+Grammatica EBNF non ambigua:
 
 Prog ::= StmtSeq 'EOF'
 StmtSeq ::= Stmt (';' StmtSeq)?
@@ -18,42 +22,75 @@ Add ::= Mul ('+' Mul)*
 Mul::= Atom ('*' Atom)*
 Atom ::= '-' Atom | '[' ExpSeq ']' | NUM | ID | '(' Exp ')'
 
+*******************************************************************************************************************************************************************************************
+*******************************************************************************************************************************************************************************************
+****************************************************************GRAMMATICA PROGETTO FINALE*************************************************************************************************
 
+Richieste aggiuntive alla grammatica dei laboratori:
+      CATEGORIE LESSICALI
+            -literal di tipo boolean rappresentati dalle due keyword {false ,true}
+            -literal interi di tipo binario: iniziano con la cifra0, seguita dalla letteraboBe terminano con una sequenzanonvuotadi cifre binarie. L’interpretazione`e quella convenzionale: per esempio, il literal0b0111denota il numero 7.
 
-GRAMMATICA PROGETTO FINALE
+      SINTASSI DELLE ESPRESSIONI
+            -operatori binari: {&&, ==}; Associano entrambi a sinistra
+            -operatori unari: {!, opt, empty, def, get}; Hanno la precedenza sugli operatoribinari infissi
+            -Exp ::= (quello che c'era per il lab 10) | Exp && Exp | Exp == Exp | !Exp | opt Exp  |empty Exp | def Exp | get Exp
+            -opt, empty, def e get sono nuove keyword
+            -Per trattare correttamente il riconoscimento dei lessemi = e == tramite un’espressione regolare, elencare prima ==; quindi l’espressione regolare di forma == | = `e quella corretta
+            
+            Precedenza operatori binari:
+                  1) &&    precedenza più bassa
+                  2) ==
+                  3) ::
+                  4) +
+                  5) *     precedenza più alta
 
-da aggiungere:
-CATEGORIE LESSICALI
-   -literal di tipo boolean rappresentati dalle due keywordfalseetrue
-   -literal interi di tipo binario: iniziano con la cifra0, seguita dalla letteraboBe terminano con una sequenzanonvuotadi cifre binarie. L’interpretazione`e quella convenzionale: per esempio, il literal0b0111denota il numero 7.
-
-SINTASSI DELLE ESPRESSIONI
-   -operatori binari: {&&, ==}; Associano entrambi a sinistra
-   -operatori unari: {!, opt, empty, def, get}; Hanno la precedenza sugli operatoribinari infissi
-   -Exp ::= (quello che c'era per il lab 10) | Exp && Exp | Exp == Exp | !Exp | opt Exp  |empty Exp | def Exp | get Exp
-   -opt, empty, def e get sono nuove keyword
-   -Per trattare correttamente il riconoscimento dei lessemi = e == tramite un’espressione regolare, elencare prima ==; quindi l’espressione regolare di forma == | = `e quella corretta
-   Precedenza operatori binari:
-      1) &&    precedenza più bassa
-      2) ==
-      3) ::
-      4) +
-      5) *     precedenza più alta
-
-SINTASSI DEGLI STATEMENT
-   -Stmt ::= (quello che c'era per il lab 10) | if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
-   -if, else, do e while sono nuove keyword.
-   -la parte introdotta dalla keywordelse`e opzionale
+      SINTASSI DEGLI STATEMENT
+            -Stmt ::= (quello che c'era per il lab 10) | if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
+            -if, else, do e while sono nuove keyword.
+            -la parte introdotta dalla keyword else e' opzionale
    
+************************************************************************************************************************************************
+*******************GRAMMATICA BNF AMBIGUA COSTRITA A PARTIRE DA QUELLA DEI LABORATORI CON LE AGGIUNTE RICHIESTE DAL TESTO*************************** 
 
-DA COMPLETARE E DISAMBIGUARE
 cose aggiunte:
-      1)aggiunto in EXP : BOOL e BINARY
+      1)aggiunto in EXP       : BOOL e BINARY
+      2)aggiunto in BinOp     : && e ==
+      3)aggiunto in Exp       : | !Exp | opt Exp  |empty Exp | def Exp | get Exp
+      4)aggiunto in Stmt      :  | if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
 
 
 Prog ::= StmtSeq 'EOF'
 StmtSeq ::= Stmt | Stmt ';' StmtSeq
-Stmt ::= 'var' ID '=' Exp | ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}'
+Stmt ::= 'var' ID '=' Exp | ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' | if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
 ExpSeq ::= Exp | Exp ',' ExpSeq
-Exp ::= Exp BinOp Exp | '-' Exp| '[' ExpSeq ']' | NUM | ID  | BOOL | BINARY | '(' Exp ')'
-BinOp ::= '::' | '+' | '*'
+Exp ::= Exp BinOp Exp | '-' Exp | '[' ExpSeq ']' | NUM | ID  | BOOL | BINARY | '(' Exp ')' | !Exp | opt Exp  |empty Exp | def Exp | get Exp
+BinOp ::= '::' | '+' | '*' | '&&' | '=='
+
+************************************************************************************************************************************************
+*******************GRAMMATICA EBNF NON AMBIGUA COSTRITA A PARTIRE DA QUELLA DEI LABORATORI CON LE AGGIUNTE RICHIESTE DAL TESTO******************
+
+cose aggiunte:
+      1)aggiunto in Atom      :  {BOOL, BINARY}
+      2)modificato Exp        : {Exp ::= Add ('::' Exp)?} -> {Exp ::= Cmp ('&&' Exp)?}
+      3)creato Cmp (compara)
+      4)creato CostList (costruttore liste)
+      5)aggiunto in Atom      : {| '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom |}
+      6)aggiunto in Stmt      :  {| if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)} [44]
+
+
+Prog ::= StmtSeq 'EOF'
+StmtSeq ::= Stmt (';' StmtSeq)?
+Stmt ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' |  if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
+ExpSeq ::= Exp (',' ExpSeq)?
+Exp ::= Cmp ('&&' Exp)?
+Cmp ::= CostList ('==' CostList)*
+CostList ::= Add ('::' Add)*
+Add ::= Mul ('+' Mul)*
+Mul::= Atom ('*' Atom)*
+Atom ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
+
+
+*****************************************************************************************************************************************************************************************************
+*****************************************************************************************************************************************************************************************************
+*****************************************************************************************************************************************************************************************************
