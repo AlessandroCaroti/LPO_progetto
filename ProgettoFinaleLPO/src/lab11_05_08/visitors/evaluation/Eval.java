@@ -30,25 +30,31 @@ public class Eval implements Visitor<Value> {
 
 	@Override
 	public Value visitAssignStmt(Ident ident, Exp exp) {
-		// to be modified/completed
+		env.update(ident, exp.accept(this));
 		return null;
 	}
 
 	@Override
 	public Value visitForEachStmt(Ident ident, Exp exp, StmtSeq block) {
-		// to be modified/completed
+		ListValue list = exp.accept(this).asList();
+		for (Value val : list) {
+			env.enterLevel();
+			env.dec(ident, val);
+			block.accept(this);
+			env.exitLevel();
+		}
 		return null;
 	}
 
 	@Override
 	public Value visitPrintStmt(Exp exp) {
-		// to be modified/completed
+		System.out.println(exp.accept(this));
 		return null;
 	}
 
 	@Override
 	public Value visitVarStmt(Ident ident, Exp exp) {
-		// to be modified/completed
+		env.dec(ident, exp.accept(this));
 		return null;
 	}
 
@@ -57,13 +63,14 @@ public class Eval implements Visitor<Value> {
 
 	@Override
 	public Value visitSingleStmt(Stmt stmt) {
-		// to be modified/completed
+		stmt.accept(this);
 		return null;
 	}
 
 	@Override
 	public Value visitMoreStmt(Stmt first, StmtSeq rest) {
-		// to be modified/completed
+		first.accept(this);
+		rest.accept(this);
 		return null;
 	}
 
@@ -71,44 +78,38 @@ public class Eval implements Visitor<Value> {
 
 	@Override
 	public Value visitAdd(Exp left, Exp right) {
-		// to be modified/completed
-		return null;
+		return new IntValue(left.accept(this).asInt() + right.accept(this).asInt());
 	}
 
 	@Override
 	public Value visitIntLiteral(int value) {
-		// to be modified/completed
-		return null;
+		return new IntValue(value);
 	}
 
 	@Override
 	public Value visitListLiteral(ExpSeq exps) {
-		// to be modified/completed
-		return null;
+		return exps.accept(this);
 	}
 
 	@Override
 	public Value visitMul(Exp left, Exp right) {
-		// to be modified/completed
-		return null;
+		return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
 	}
 
 	@Override
 	public Value visitPrefix(Exp left, Exp right) {
-		// to be modified/completed
-		return null;
+		Value el = left.accept(this);
+		return right.accept(this).asList().prefix(el);
 	}
 
 	@Override
 	public Value visitSign(Exp exp) {
-		// to be modified/completed
-		return null;
+		return new IntValue(-exp.accept(this).asInt());
 	}
 
 	@Override
 	public Value visitIdent(String name) {
-		// to be modified/completed
-		return null;
+		return env.lookup(new SimpleIdent(name));
 	}
 
 	// dynamic semantics of sequences of expressions
@@ -116,14 +117,12 @@ public class Eval implements Visitor<Value> {
 
 	@Override
 	public Value visitSingleExp(Exp exp) {
-		// to be modified/completed
-		return null;
+		return new ListValue(exp.accept(this), new ListValue());
 	}
 
 	@Override
 	public Value visitMoreExp(Exp first, ExpSeq rest) {
-		// to be modified/completed
-		return null;
+		return new ListValue(first.accept(this), rest.accept(this).asList());
 	}
 
 }

@@ -17,8 +17,8 @@ public class TypeCheck implements Visitor<Type> {
 	private final GenEnvironment<Type> env = new GenEnvironment<>();
 
 	private void checkBinOp(Exp left, Exp right, Type type) {
-		left.accept(this).checkEqual(type);
-		right.accept(this).checkEqual(type);
+		type.checkEqual(left.accept(this));
+		type.checkEqual(right.accept(this));
 	}
 
 	// static semantics for programs; no value returned by the visitor
@@ -37,25 +37,30 @@ public class TypeCheck implements Visitor<Type> {
 
 	@Override
 	public Type visitAssignStmt(Ident ident, Exp exp) {
-		// to be modified/completed
-		return null;
-	}
-
-	@Override
-	public Type visitPrintStmt(Exp exp) {
-		// to be modified/completed
+		Type found = env.lookup(ident);
+		found.checkEqual(exp.accept(this));
 		return null;
 	}
 
 	@Override
 	public Type visitForEachStmt(Ident ident, Exp exp, StmtSeq block) {
-		// to be modified/completed
+		Type ty = exp.accept(this).getListElemType();
+		env.enterLevel();
+		env.dec(ident, ty);
+		block.accept(this);
+		env.exitLevel();
+		return null;
+	}
+
+	@Override
+	public Type visitPrintStmt(Exp exp) {
+		exp.accept(this);
 		return null;
 	}
 
 	@Override
 	public Type visitVarStmt(Ident ident, Exp exp) {
-		// to be modified/completed
+		env.dec(ident, exp.accept(this));
 		return null;
 	}
 
@@ -64,13 +69,14 @@ public class TypeCheck implements Visitor<Type> {
 
 	@Override
 	public Type visitSingleStmt(Stmt stmt) {
-		// to be modified/completed
+		stmt.accept(this);
 		return null;
 	}
 
 	@Override
 	public Type visitMoreStmt(Stmt first, StmtSeq rest) {
-		// to be modified/completed
+		first.accept(this);
+		rest.accept(this);
 		return null;
 	}
 
@@ -78,44 +84,40 @@ public class TypeCheck implements Visitor<Type> {
 
 	@Override
 	public Type visitAdd(Exp left, Exp right) {
-		// to be modified/completed
-		return null;
+		checkBinOp(left, right, INT);
+		return INT;
 	}
 
 	@Override
 	public Type visitIntLiteral(int value) {
-		// to be modified/completed
-		return null;
+		return INT;
 	}
 
 	@Override
 	public Type visitListLiteral(ExpSeq exps) {
-		// to be modified/completed
-		return null;
+		return new ListType(exps.accept(this));
 	}
 
 	@Override
 	public Type visitMul(Exp left, Exp right) {
-		// to be modified/completed
-		return null;
+		checkBinOp(left, right, INT);
+		return INT;
 	}
 
 	@Override
 	public Type visitPrefix(Exp left, Exp right) {
-		// to be modified/completed
-		return null;
+		Type elemType = left.accept(this);
+		return new ListType(elemType).checkEqual(right.accept(this));
 	}
 
 	@Override
 	public Type visitSign(Exp exp) {
-		// to be modified/completed
-		return null;
+		return INT.checkEqual(exp.accept(this));
 	}
 
 	@Override
 	public Type visitIdent(String name) {
-		// to be modified/completed
-		return null;
+		return env.lookup(new SimpleIdent(name));
 	}
 
 	// static semantics of sequences of expressions
@@ -123,13 +125,13 @@ public class TypeCheck implements Visitor<Type> {
 
 	@Override
 	public Type visitSingleExp(Exp exp) {
-		return null;
+		return exp.accept(this);
 	}
 
 	@Override
 	public Type visitMoreExp(Exp first, ExpSeq rest) {
-		// to be modified/completed
-		return null;
+		Type found = first.accept(this);
+		return found.checkEqual(rest.accept(this));
 	}
 
 }
