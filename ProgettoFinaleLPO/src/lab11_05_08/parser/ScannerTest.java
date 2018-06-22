@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 
-//TODO forse aggiungere BOOL e BINARY
+//TODO forse aggiungere BINARY
 enum LexType {
 	IDENT, NUM, SKIP, BOOL
 }
