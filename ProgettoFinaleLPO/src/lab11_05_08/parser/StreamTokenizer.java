@@ -16,17 +16,19 @@ public class StreamTokenizer implements Tokenizer {
 	private TokenType tokenType;
 	private String tokenString;
 	private int intValue;
+	private boolean boolValue;
 	private final Scanner scanner;
 
-    //TODO aggiungere BOOL e BINARY
+    //TODO aggiungere BINARY
 	static {
 		// remark: groups must correspond to the ordinal of the corresponding
 		// token type
-		final String identRegEx = "([a-zA-Z][a-zA-Z0-9]*)"; // group 1
-		final String numRegEx = "(0|[1-9][0-9]*)"; // group 2
-		final String skipRegEx = "(\\s+|//.*)"; // group 3
+		final String identRegEx  = "([a-zA-Z][a-zA-Z0-9]*)";    // group 1
+		final String numRegEx    = "(0|[1-9][0-9]*)";           // group 2
+		final String skipRegEx   = "(\\s+|//.*)";               // group 3
+        final String boolRegEx   = "(true|false)";              // group 4
 		final String symbolRegEx = "\\+|\\*|=|\\(|\\)|;|,|\\{|\\}|-|::|:|\\[|\\]";
-		regEx = identRegEx + "|" + numRegEx + "|" + skipRegEx + "|" + symbolRegEx;
+		regEx = identRegEx + "|" + numRegEx + "|" + skipRegEx + "|" + boolRegEx + "|" + symbolRegEx;
 	}
 
 	static {
@@ -66,13 +68,18 @@ public class StreamTokenizer implements Tokenizer {
 		}
 		if (scanner.group(NUM.ordinal()) != null) { // NUM
 			tokenType = NUM;
-			intValue = Integer.parseInt(tokenString);
+			intValue  = Integer.parseInt(tokenString);
 			return;
 		}
 		if (scanner.group(SKIP.ordinal()) != null) { // SKIP
 			tokenType = SKIP;
 			return;
 		}
+        if (scanner.group(BOOL.ordinal()) != null) { // BOOL
+            tokenType = BOOL;
+            boolValue = Boolean.parseBoolean(tokenString);
+            return;
+        }
 		tokenType = symbols.get(tokenString); // a symbol
 		if (tokenType == null)
 			throw new AssertionError("Fatal error");
@@ -120,6 +127,12 @@ public class StreamTokenizer implements Tokenizer {
 	}
 
 	@Override
+    public boolean boolValue(){
+	    checkValidToken(BOOL);
+	    return boolValue;
+    }
+
+	@Override
 	public TokenType tokenType() {
 		checkValidToken();
 		return tokenType;
@@ -129,6 +142,7 @@ public class StreamTokenizer implements Tokenizer {
 	public boolean hasNext() {
 		return hasNext;
 	}
+	//TODO guarda nota nel file dell'interfaccia Tokenizer
 
 	@Override
 	public void close() throws TokenizerException {
