@@ -97,3 +97,26 @@ Atom ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' At
 *****************************************************************************************************************************************************************************************************
 *****************************************************************************************************************************************************************************************************
 *****************************************************************************************************************************************************************************************************
+
+
+
+NUOVI TOKEN:
+
+    opAtomici:
+        00)BOOL
+        00)BINARY
+        
+        01)!      === NOT
+        02)opt    === OPTIONAL           L’operatore opt restituisce il valore opzionale che contiene il valore ottenuto dalla valutazione dell’operando. Un valore opzionale può contenere un altro valore opzionale.
+        03)empty  === EMPTY              L’operatore empty restituisce il valore opzionale vuoto (o indefinito), ossia quello che non contiene alcun valore. Se il valore dell’operando non `e opzionale, la valutazione solleva un errore.
+        04)def    === DEFINED            L’operatore def restituisce il valore true se, e solo se, l’operando si valuta in un valore opzionale non vuoto. Se il valore dell’operando non `e opzionale, la valutazione solleva un errore.
+        05)get    === GET                L’operatore get restituisce il valore contenuto nel valore opzionale ottenuto dalla valutazione del suo operando, se tale valore esiste. La valutazione solleva un errore se l’operando si valuta nel valore opzionale vuoto o in un qualsiasi valore non opzionale.
+
+    opBinari:
+        06)&&     === AND
+        07)==     === EQUIVALENT
+    stmt:
+        08)if     === IF
+        09)else   === ELSE
+        10)do     === DO
+        11)while  === WHILE

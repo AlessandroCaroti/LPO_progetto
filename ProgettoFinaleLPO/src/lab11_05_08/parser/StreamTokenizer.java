@@ -18,6 +18,7 @@ public class StreamTokenizer implements Tokenizer {
 	private int intValue;
 	private final Scanner scanner;
 
+    //TODO aggiungere BOOL e BINARY
 	static {
 		// remark: groups must correspond to the ordinal of the corresponding
 		// token type
