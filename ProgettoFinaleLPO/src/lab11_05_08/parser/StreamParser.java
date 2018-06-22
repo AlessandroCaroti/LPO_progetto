@@ -153,7 +153,7 @@ public class StreamParser implements Parser {
 		case NUM:
 			return parseNum();
         case BOOL:
-                return parseBool();
+            return parseBool();
 		case IDENT:
 			return parseIdent();
 		case MINUS:
