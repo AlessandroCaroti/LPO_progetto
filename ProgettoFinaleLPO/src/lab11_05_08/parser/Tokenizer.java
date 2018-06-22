@@ -1,6 +1,7 @@
 package lab11_05_08.parser;
 
 public interface Tokenizer extends AutoCloseable {
+	//TODO FORSE aggiungere metodi binaryValue() e boolValue() FORSE
 
 	TokenType next() throws TokenizerException;
 
