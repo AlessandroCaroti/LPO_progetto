@@ -19,7 +19,7 @@ public class StreamTokenizer implements Tokenizer {
 	private boolean boolValue;
 	private final Scanner scanner;
 
-    //TODO aggiungere BOOL e BINARY
+    //TODO aggiungere BINARY
 	static {
 		// remark: groups must correspond to the ordinal of the corresponding
 		// token type
