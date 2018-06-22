@@ -74,7 +74,6 @@ public class StreamTokenizer implements Tokenizer {
 			tokenType = SKIP;
 			return;
 		}
-		// TODO aggiungere il token BOOL e decomentare questa parte di codice
         if (scanner.group(BOOL.ordinal()) != null) { // BOOL
             tokenType = BOOL;
             return;
