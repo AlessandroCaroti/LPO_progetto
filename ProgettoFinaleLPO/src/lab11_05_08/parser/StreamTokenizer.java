@@ -134,6 +134,7 @@ public class StreamTokenizer implements Tokenizer {
 	public boolean hasNext() {
 		return hasNext;
 	}
+	//TODO guarda nota nel file dell'interfaccia Tokenizer
 
 	@Override
 	public void close() throws TokenizerException {
