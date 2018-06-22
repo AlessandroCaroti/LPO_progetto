@@ -16,6 +16,7 @@ public class StreamTokenizer implements Tokenizer {
 	private TokenType tokenType;
 	private String tokenString;
 	private int intValue;
+	private boolean boolValue;
 	private final Scanner scanner;
 
     //TODO aggiungere BOOL e BINARY
@@ -67,7 +68,7 @@ public class StreamTokenizer implements Tokenizer {
 		}
 		if (scanner.group(NUM.ordinal()) != null) { // NUM
 			tokenType = NUM;
-			intValue = Integer.parseInt(tokenString);
+			intValue  = Integer.parseInt(tokenString);
 			return;
 		}
 		if (scanner.group(SKIP.ordinal()) != null) { // SKIP
@@ -76,6 +77,7 @@ public class StreamTokenizer implements Tokenizer {
 		}
         if (scanner.group(BOOL.ordinal()) != null) { // BOOL
             tokenType = BOOL;
+            boolValue = Boolean.parseBoolean(tokenString);
             return;
         }
 		tokenType = symbols.get(tokenString); // a symbol
