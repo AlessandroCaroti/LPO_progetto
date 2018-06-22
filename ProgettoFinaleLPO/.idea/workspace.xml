@@ -17,8 +17,8 @@
           <file leaf-file-name="grammatica.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
-                  <caret line="113" column="20" lean-forward="true" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+                <state relative-caret-position="2088">
+                  <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -26,8 +26,8 @@
           <file leaf-file-name="TokenType.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/TokenType.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="72">
+                  <caret line="4" column="25" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -39,8 +39,8 @@
           <file leaf-file-name="grammatica.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
-                  <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
+                <state relative-caret-position="99">
+                  <caret line="140" column="132" selection-start-line="140" selection-start-column="132" selection-end-line="140" selection-end-column="132" />
                 </state>
               </provider>
             </entry>
@@ -51,7 +51,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>IDENT</find>
+      <find>?</find>
       <find>NUM</find>
+      <find>SKIP</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -92,11 +95,6 @@
             <path>
               <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-              <item name="Specifiche" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
@@ -164,12 +162,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529652139634</updated>
-      <workItem from="1529652143917" duration="2487000" />
+      <workItem from="1529652143917" duration="4733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2487000" />
+    <option name="totallyTimeSpent" value="4733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -222,13 +220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/TokenizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -239,17 +230,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2826">
+          <caret line="173" column="16" selection-start-line="173" selection-start-column="16" selection-end-line="173" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/TokenType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="72">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
+        <state relative-caret-position="99">
+          <caret line="140" column="132" selection-start-line="140" selection-start-column="132" selection-end-line="140" selection-end-column="132" />
         </state>
       </provider>
     </entry>

@@ -105,7 +105,7 @@ NUOVI TOKEN:
     opAtomici:
         00)BOOL
         00)BINARY
-        
+
         01)!      === NOT
         02)opt    === OPTIONAL           L’operatore opt restituisce il valore opzionale che contiene il valore ottenuto dalla valutazione dell’operando. Un valore opzionale può contenere un altro valore opzionale.
         03)empty  === EMPTY              L’operatore empty restituisce il valore opzionale vuoto (o indefinito), ossia quello che non contiene alcun valore. Se il valore dell’operando non `e opzionale, la valutazione solleva un errore.
@@ -115,8 +115,35 @@ NUOVI TOKEN:
     opBinari:
         06)&&     === AND
         07)==     === EQUIVALENT
+
     stmt:
         08)if     === IF
         09)else   === ELSE
         10)do     === DO
         11)while  === WHILE
+
+
+
+    tokenGiàEsistenti
+        **)EOF              BHO                         fine del file (non so il simbolo)
+        **)IDENT            ([a-zA-Z][a-zA-Z0-9]*)      nome di variablie
+        **)NUM              (0|[1-9][0-9]*)             numero in base 10
+        **)SKIP             (\s+|//.*)                  caratteri da ignorare es. spazi bianchi
+        **)IN               :                           operatore associato al for, è il corrispettivo dell' EACH in java
+        **)FOR              for                         ciclo
+        **)PRINT            print                       stampa
+        **)PREFIX           BHO
+        **)VAR              var                         inizio dichiarazione variabile
+        **)PLUS             +                           addizione
+        **)TIMES            *                           moltiplicazione
+        **)ASSIGN           =                           assegnazione
+        **)OPEN_PAR         (                           NON NE SONO SICURO MA SONO LE UNICHE CHE SONO RIMASTE, SCELTE PER ESCLUSIONE
+        **)CLOSE_PAR        )                           NON NE SONO SICURO MA SONO LE UNICHE CHE SONO RIMASTE, SCELTE PER ESCLUSIONE
+        **)STMT_SEP         ;                           separatora tra 2 STMT
+        **)EXP_SEP          ,                           penso separatore di EXP
+        **)OPEN_BLOCK       {                           penso aperta graffa
+        **)CLOSE_BLOCK      }
+        **)MINUS            -                           sottrazione
+        **)OPEN_LIST        [                           apetura di una lista
+        **)CLOSE_LIST       ]                           chiusura di una lista
+
