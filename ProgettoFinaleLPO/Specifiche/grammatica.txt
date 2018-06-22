@@ -127,7 +127,8 @@ NUOVI TOKEN:
 
 
 
-    tokenGiàEsistenti:
+    tokenGiàEsistenti:(specificate in StreamTokenizer.java)
+
         $$)TOKEN            simbolo\i                   Descrizione
 
         **)EOF              BHO                         fine del file (non so il simbolo)
@@ -137,7 +138,7 @@ NUOVI TOKEN:
         **)IN               :                           operatore associato al for, è il corrispettivo dell' EACH in java
         **)FOR              for                         ciclo
         **)PRINT            print                       stampa
-        **)PREFIX           BHO
+        **)PREFIX           ::
         **)VAR              var                         inizio dichiarazione variabile
         **)PLUS             +                           addizione
         **)TIMES            *                           moltiplicazione
