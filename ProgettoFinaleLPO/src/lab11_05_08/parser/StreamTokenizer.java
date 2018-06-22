@@ -127,6 +127,12 @@ public class StreamTokenizer implements Tokenizer {
 	}
 
 	@Override
+    public boolean boolValue(){
+	    checkValidToken(BOOL);
+	    return boolValue;
+    }
+
+	@Override
 	public TokenType tokenType() {
 		checkValidToken();
 		return tokenType;
