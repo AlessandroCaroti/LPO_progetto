@@ -26,16 +26,16 @@ public class StreamTokenizer implements Tokenizer {
 		// token type
         final String boolRegEx   = "(true|false)";              // group 1
 		final String identRegEx  = "([a-zA-Z][a-zA-Z0-9]*)";    // group 2
-		final String numRegEx    = "(0|[1-9][0-9]*)";           // group 3
-		final String skipRegEx   = "(\\s+|//.*)";               // group 4
-		final String binaryRegEx = "(0[b|B][0|1]+)";			// group 5
+        final String binaryRegEx = "(0[b|B][0|1]+)";			// group 3
+		final String numRegEx    = "(0|[1-9][0-9]*)";           // group 4
+		final String skipRegEx   = "(\\s+|//.*)";               // group 5
 		final String symbolRegEx = "\\+|\\*|=|\\(|\\)|;|,|\\{|\\}|-|::|:|\\[|\\]";
 		regEx = boolRegEx   + "|" +
                 identRegEx  + "|" +
-				numRegEx    + "|" +
+                binaryRegEx + "|" +
+                numRegEx    + "|" +
 				skipRegEx   + "|" +
-				binaryRegEx + "|" +
-				symbolRegEx;
+                symbolRegEx;
 	}
 
 	static {
@@ -67,6 +67,7 @@ public class StreamTokenizer implements Tokenizer {
 
 	private void checkType() {
 		tokenString = scanner.group();
+
         if (scanner.group(BOOL.ordinal()) != null) { // BOOL
             tokenType = BOOL;
             boolValue = Boolean.parseBoolean(tokenString);
