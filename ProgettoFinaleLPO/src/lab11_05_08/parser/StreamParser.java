@@ -145,7 +145,7 @@ public class StreamParser implements Parser {
 		return exp;
 	}
 
-    //TODO forse aggiungere BINARY e altri che ora non prendo in considerazione
+    //TODO forse aggiungere altri che ora non prendo in considerazione
 	private Exp parseAtom() throws ParserException {
 		switch (tokenizer.tokenType()) {
 		default:
@@ -154,6 +154,8 @@ public class StreamParser implements Parser {
 			return parseNum();
         case BOOL:
             return parseBool();
+        case BINARY:
+            return parseBinary();
 		case IDENT:
 			return parseIdent();
 		case MINUS:
@@ -177,13 +179,17 @@ public class StreamParser implements Parser {
         return  new BoolLiteral(val);
     }
 
+    private BinaryLiteral parseBinary() throws ParserException{
+	    int val = tokenizer.binaryValue();
+        consume(BINARY);
+        return new BinaryLiteral(val);
+    }
+
 	private Ident parseIdent() throws ParserException {
 		String name = tokenizer.tokenString();
 		consume(IDENT); // or tryNext();
 		return new SimpleIdent(name);
 	}
-
-    //TODO forse aggiungere parseBINARY()
 
 	private Sign parseMinus() throws ParserException {
 		consume(MINUS); // or tryNext();

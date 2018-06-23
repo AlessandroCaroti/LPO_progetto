@@ -93,6 +93,16 @@ public class TypeCheck implements Visitor<Type> {
 		return INT;
 	}
 
+    @Override
+    public Type visitBoolLiteral(boolean value) {
+        return BOOL;
+    }
+
+    @Override
+    public Type visitBinaryLiteral(int value) {
+        return BINARY;
+    }
+
 	@Override
 	public Type visitListLiteral(ExpSeq exps) {
 		return new ListType(exps.accept(this));

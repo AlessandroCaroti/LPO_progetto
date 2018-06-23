@@ -1,7 +1,6 @@
 package lab11_05_08.parser;
 
 public interface Tokenizer extends AutoCloseable {
-	//TODO aggiungere metodi binaryValue()
 
 	TokenType next() throws TokenizerException;
 
@@ -10,6 +9,8 @@ public interface Tokenizer extends AutoCloseable {
 	int intValue();
 
 	boolean boolValue();
+
+	int binaryValue();
 
 	TokenType tokenType();
 

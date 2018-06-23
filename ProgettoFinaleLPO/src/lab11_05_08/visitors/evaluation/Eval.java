@@ -87,6 +87,12 @@ public class Eval implements Visitor<Value> {
 	}
 
 	@Override
+	public Value visitBoolLiteral(boolean value) {return new BoolValue(value);}
+
+    @Override
+    public Value visitBinaryLiteral(int value) {return new BinaryValue(value);}
+
+	@Override
 	public Value visitListLiteral(ExpSeq exps) {
 		return exps.accept(this);
 	}

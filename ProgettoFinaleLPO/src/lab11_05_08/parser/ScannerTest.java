@@ -7,9 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 
-//TODO forse aggiungere BINARY
 enum LexType {
-	IDENT, NUM, SKIP, BOOL
+	IDENT, NUM, SKIP, BOOL, BINARY
 }
 
 public class ScannerTest {
@@ -22,7 +21,7 @@ public class ScannerTest {
 	}
 
 	public static void main(String[] args) {
-		final String regEx = "([a-zA-Z][a-zA-Z0-9]*)|(0|[1-9][0-9]*)|(\\s+|//.*)|(true|false)";
+		final String regEx = "([a-zA-Z][a-zA-Z0-9]*)|(0|[1-9][0-9]*)|(\\s+|//.*)|(true|false)|(0[b|B][0|1]+)";
 		try (StreamScanner sc = new StreamScanner(regEx,
 				args.length > 0 ? new FileReader(args[0]) : new InputStreamReader(System.in))) {
 			while (sc.hasNext())

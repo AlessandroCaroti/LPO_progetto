@@ -14,12 +14,13 @@ public class StreamTokenizer implements Tokenizer {
 	private boolean hasNext = true; // any stream contains at least the EOF
 									// token
 	private TokenType tokenType;
-	private String tokenString;
-	private int intValue;
+	private String    tokenString;
+	private int     intValue;
 	private boolean boolValue;
+	private int     binaryValue;
 	private final Scanner scanner;
 
-    //TODO aggiungere BINARY
+
 	static {
 		// remark: groups must correspond to the ordinal of the corresponding
 		// token type
@@ -27,8 +28,14 @@ public class StreamTokenizer implements Tokenizer {
 		final String numRegEx    = "(0|[1-9][0-9]*)";           // group 2
 		final String skipRegEx   = "(\\s+|//.*)";               // group 3
         final String boolRegEx   = "(true|false)";              // group 4
+		final String binaryRegEx = "(0[b|B][0|1]+)";			// group 5
 		final String symbolRegEx = "\\+|\\*|=|\\(|\\)|;|,|\\{|\\}|-|::|:|\\[|\\]";
-		regEx = identRegEx + "|" + numRegEx + "|" + skipRegEx + "|" + boolRegEx + "|" + symbolRegEx;
+		regEx = identRegEx  + "|" +
+				numRegEx    + "|" +
+				skipRegEx   + "|" +
+				boolRegEx   + "|" +
+				binaryRegEx + "|" +
+				symbolRegEx;
 	}
 
 	static {
@@ -80,6 +87,12 @@ public class StreamTokenizer implements Tokenizer {
             boolValue = Boolean.parseBoolean(tokenString);
             return;
         }
+		if (scanner.group(BINARY.ordinal()) != null) { // BOOL
+			tokenType = BINARY;
+			binaryValue = Integer.parseInt(tokenString.substring(2),2);
+			return;
+		}
+
 		tokenType = symbols.get(tokenString); // a symbol
 		if (tokenType == null)
 			throw new AssertionError("Fatal error");
@@ -132,6 +145,12 @@ public class StreamTokenizer implements Tokenizer {
 	    return boolValue;
     }
 
+    @Override
+    public int binaryValue(){
+	    checkValidToken(BINARY);
+	    return binaryValue;
+    }
+
 	@Override
 	public TokenType tokenType() {
 		checkValidToken();
@@ -142,7 +161,6 @@ public class StreamTokenizer implements Tokenizer {
 	public boolean hasNext() {
 		return hasNext;
 	}
-	//TODO guarda nota nel file dell'interfaccia Tokenizer
 
 	@Override
 	public void close() throws TokenizerException {
