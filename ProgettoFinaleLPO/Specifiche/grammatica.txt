@@ -167,7 +167,7 @@ TOKEN DA AGGIUNGERE:
     -ELSE
     -DO
     -WHILE
-    
+
 TOKE GIA AGGIUNTI:
     -BOOL
     -BINARY

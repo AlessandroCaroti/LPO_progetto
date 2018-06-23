@@ -3,6 +3,7 @@ package lab11_05_08.parser;
 import static lab11_05_08.parser.TokenType.*;
 
 import lab11_05_08.parser.ast.*;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 /*
 Prog ::= StmtSeq 'EOF'
