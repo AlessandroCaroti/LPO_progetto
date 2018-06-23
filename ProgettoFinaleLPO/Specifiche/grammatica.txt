@@ -143,8 +143,8 @@ NUOVI TOKEN:
         **)PLUS             +                           addizione
         **)TIMES            *                           moltiplicazione
         **)ASSIGN           =                           assegnazione
-        **)OPEN_PAR         (                           NON NE SONO SICURO MA SONO LE UNICHE CHE SONO RIMASTE, SCELTE PER ESCLUSIONE
-        **)CLOSE_PAR        )                           NON NE SONO SICURO MA SONO LE UNICHE CHE SONO RIMASTE, SCELTE PER ESCLUSIONE
+        **)OPEN_PAR         (
+        **)CLOSE_PAR        )
         **)STMT_SEP         ;                           separatora tra 2 STMT
         **)EXP_SEP          ,                           penso separatore di EXP
         **)OPEN_BLOCK       {                           penso aperta graffa
@@ -152,3 +152,24 @@ NUOVI TOKEN:
         **)MINUS            -                           sottrazione
         **)OPEN_LIST        [                           apetura di una lista
         **)CLOSE_LIST       ]                           chiusura di una lista
+
+*************************************************************************************************************************************************************
+
+TOKEN DA AGGIUNGERE:
+    -NOT
+    -OPTIONAL
+    -EMPTY
+    -DEFINED
+    -GET
+    -AND
+    -EQUIVALENT
+    -IF
+    -ELSE
+    -DO
+    -WHILE
+    
+TOKE GIA AGGIUNTI:
+    -BOOL
+    -BINARY
+
+TOKEN TESTATI:
