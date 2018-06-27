@@ -17,7 +17,6 @@ public class StreamTokenizer implements Tokenizer {
 	private String    tokenString;
 	private int     intValue;
 	private boolean boolValue;
-	private int     binaryValue;
 	private final Scanner scanner;
 
 
@@ -89,8 +88,8 @@ public class StreamTokenizer implements Tokenizer {
 			return;
 		}
 		if (scanner.group(BINARY.ordinal()) != null) { // BINARY
-			tokenType = BINARY;
-			binaryValue = Integer.parseInt(tokenString.substring(2),2);
+			tokenType = NUM;
+            intValue = Integer.parseInt(tokenString.substring(2),2);
 			return;
 		}
 
@@ -144,12 +143,6 @@ public class StreamTokenizer implements Tokenizer {
     public boolean boolValue(){
 	    checkValidToken(BOOL);
 	    return boolValue;
-    }
-
-    @Override
-    public int binaryValue(){
-	    checkValidToken(BINARY);
-	    return binaryValue;
     }
 
 	@Override

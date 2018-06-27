@@ -155,8 +155,6 @@ public class StreamParser implements Parser {
 			return parseNum();
         case BOOL:
             return parseBool();
-        case BINARY:
-            return parseBinary();
 		case IDENT:
 			return parseIdent();
 		case MINUS:
@@ -178,12 +176,6 @@ public class StreamParser implements Parser {
 	    boolean val = tokenizer.boolValue();
         consume(BOOL);
         return  new BoolLiteral(val);
-    }
-
-    private BinaryLiteral parseBinary() throws ParserException{
-	    int val = tokenizer.binaryValue();
-        consume(BINARY);
-        return new BinaryLiteral(val);
     }
 
 	private Ident parseIdent() throws ParserException {
