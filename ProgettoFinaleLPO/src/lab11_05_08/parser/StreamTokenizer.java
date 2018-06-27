@@ -14,19 +14,27 @@ public class StreamTokenizer implements Tokenizer {
 	private boolean hasNext = true; // any stream contains at least the EOF
 									// token
 	private TokenType tokenType;
-	private String tokenString;
-	private int intValue;
+	private String    tokenString;
+	private int     intValue;
+	private boolean boolValue;
 	private final Scanner scanner;
 
-    //TODO aggiungere BOOL e BINARY
+
 	static {
 		// remark: groups must correspond to the ordinal of the corresponding
 		// token type
-		final String identRegEx = "([a-zA-Z][a-zA-Z0-9]*)"; // group 1
-		final String numRegEx = "(0|[1-9][0-9]*)"; // group 2
-		final String skipRegEx = "(\\s+|//.*)"; // group 3
+        final String boolRegEx   = "(true|false)";              // group 1
+		final String identRegEx  = "([a-zA-Z][a-zA-Z0-9]*)";    // group 2
+        final String binaryRegEx = "(0[b|B][0|1]+)";			// group 3
+		final String numRegEx    = "(0|[1-9][0-9]*)";           // group 4
+		final String skipRegEx   = "(\\s+|//.*)";               // group 5
 		final String symbolRegEx = "\\+|\\*|=|\\(|\\)|;|,|\\{|\\}|-|::|:|\\[|\\]";
-		regEx = identRegEx + "|" + numRegEx + "|" + skipRegEx + "|" + symbolRegEx;
+		regEx = boolRegEx   + "|" +
+                identRegEx  + "|" +
+                binaryRegEx + "|" +
+                numRegEx    + "|" +
+				skipRegEx   + "|" +
+                symbolRegEx;
 	}
 
 	static {
@@ -58,6 +66,12 @@ public class StreamTokenizer implements Tokenizer {
 
 	private void checkType() {
 		tokenString = scanner.group();
+
+        if (scanner.group(BOOL.ordinal()) != null) { // BOOL
+            tokenType = BOOL;
+            boolValue = Boolean.parseBoolean(tokenString);
+            return;
+        }
 		if (scanner.group(IDENT.ordinal()) != null) { // IDENT or a keyword
 			tokenType = keywords.get(tokenString);
 			if (tokenType == null)
@@ -66,13 +80,19 @@ public class StreamTokenizer implements Tokenizer {
 		}
 		if (scanner.group(NUM.ordinal()) != null) { // NUM
 			tokenType = NUM;
-			intValue = Integer.parseInt(tokenString);
+			intValue  = Integer.parseInt(tokenString);
 			return;
 		}
 		if (scanner.group(SKIP.ordinal()) != null) { // SKIP
 			tokenType = SKIP;
 			return;
 		}
+		if (scanner.group(BINARY.ordinal()) != null) { // BINARY
+			tokenType = NUM;
+            intValue = Integer.parseInt(tokenString.substring(2),2);
+			return;
+		}
+
 		tokenType = symbols.get(tokenString); // a symbol
 		if (tokenType == null)
 			throw new AssertionError("Fatal error");
@@ -118,6 +138,12 @@ public class StreamTokenizer implements Tokenizer {
 		checkValidToken(NUM);
 		return intValue;
 	}
+
+	@Override
+    public boolean boolValue(){
+	    checkValidToken(BOOL);
+	    return boolValue;
+    }
 
 	@Override
 	public TokenType tokenType() {

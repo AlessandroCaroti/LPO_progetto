@@ -15,6 +15,8 @@ public interface Visitor<T> {
 
 	T visitIntLiteral(int value);
 
+	T visitBoolLiteral(boolean value);
+
 	T visitListLiteral(ExpSeq exps);
 
 	T visitMoreExp(Exp first, ExpSeq rest);
