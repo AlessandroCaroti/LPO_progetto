@@ -93,6 +93,11 @@ public class TypeCheck implements Visitor<Type> {
 		return INT;
 	}
 
+    @Override
+    public Type visitBoolLiteral(boolean value) {
+        return BOOL;
+    }
+
 	@Override
 	public Type visitListLiteral(ExpSeq exps) {
 		return new ListType(exps.accept(this));
@@ -108,6 +113,20 @@ public class TypeCheck implements Visitor<Type> {
 	public Type visitPrefix(Exp left, Exp right) {
 		Type elemType = left.accept(this);
 		return new ListType(elemType).checkEqual(right.accept(this));
+	}
+
+	@Override
+	public Type visitAnd(Exp left, Exp right){
+	    checkBinOp(left, right, BOOL);
+	    return BOOL;
+	}
+
+	@Override
+	public Type visitEquivalent(Exp left, Exp right){
+        //todo da controllare non sono sicuro che sia giusto
+        Type elemType = left.accept(this);
+        elemType.checkEqual(right.accept(this));
+        return BOOL;
 	}
 
 	@Override
