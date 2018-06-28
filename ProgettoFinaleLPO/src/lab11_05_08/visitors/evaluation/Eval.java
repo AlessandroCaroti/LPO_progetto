@@ -58,6 +58,7 @@ public class Eval implements Visitor<Value> {
 		return null;
 	}
 
+
 	// dynamic semantics for sequences of statements
 	// no value returned by the visitor
 
@@ -87,13 +88,21 @@ public class Eval implements Visitor<Value> {
 	}
 
 	@Override
+	public Value visitBoolLiteral(boolean value) {return new BoolValue(value);}
+
+	@Override
 	public Value visitListLiteral(ExpSeq exps) {
 		return exps.accept(this);
 	}
 
 	@Override
+	public Value visitOptionalLiteral(Exp exp) {
+		return exp.accept(this);
+	}
+
+	@Override
 	public Value visitMul(Exp left, Exp right) {
-		return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
+        return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
 	}
 
 	@Override
@@ -102,9 +111,25 @@ public class Eval implements Visitor<Value> {
 		return right.accept(this).asList().prefix(el);
 	}
 
+
+	@Override
+	public Value visitAnd(Exp left, Exp right){
+	    return new BoolValue(left.accept(this).asBool() && right.accept(this).asBool());
+	}
+
+	@Override
+	public Value visitEquivalent(Exp left, Exp right){
+	    return new BoolValue(left.accept(this).equals(right.accept(this)));
+	}
+
 	@Override
 	public Value visitSign(Exp exp) {
 		return new IntValue(-exp.accept(this).asInt());
+	}
+
+	@Override
+	public Value visitNot(Exp exp) {
+		return new BoolValue(!exp.accept(this).asBool());
 	}
 
 	@Override

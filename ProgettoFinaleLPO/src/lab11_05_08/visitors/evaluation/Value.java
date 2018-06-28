@@ -6,6 +6,8 @@ public interface Value {
 		throw new EvaluatorException("Expecting an integer value");
 	}
 
+	default boolean asBool() {throw new EvaluatorException("Expecting an boolean value");}
+
 	default String asString() {
 		throw new EvaluatorException("Expecting a string value");
 	}
