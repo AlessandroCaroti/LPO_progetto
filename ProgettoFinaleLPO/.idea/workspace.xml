@@ -53,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypeCheck.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="214">
@@ -66,6 +66,18 @@
                 <element signature="e#2371#2372#0" expanded="true" />
                 <element signature="e#2416#2417#0" expanded="true" />
                 <element signature="e#2521#2522#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StreamTokenizer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,6 +111,7 @@
       <find>ListLitera</find>
       <find>ExpSeq</find>
       <find>Optional</find>
+      <find>OPT</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Alessandro\Documents\GitHub\LPO_progetto\ProgettoFinaleLPO\src\lab11_05_08\visitors</dir>
@@ -116,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/Visitor.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Eval.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/TokenType.java" />
-        <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/ast/OptionalLiteral.java" />
         <option value="$PROJECT_DIR$/test/test/altri/opt_2.txt" />
         <option value="$PROJECT_DIR$/test/test/altri/opt.txt" />
@@ -124,6 +136,7 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypeCheck.java" />
+        <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java" />
       </list>
     </option>
   </component>
@@ -184,24 +197,6 @@
               <item name="visitors" type="462c0819:PsiDirectoryNode" />
               <item name="typechecking" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="altri" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -256,6 +251,16 @@
       </option>
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+    </configuration>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -279,7 +284,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13673000" />
+    <option name="totallyTimeSpent" value="13917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -292,7 +297,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3133903" />
@@ -305,7 +309,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.2820513" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20536913" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20536913" />
       <window_info anchor="bottom" id="Bucklescript" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -614,16 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1686">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/ListType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -824,6 +818,16 @@
             <element signature="e#2371#2372#0" expanded="true" />
             <element signature="e#2416#2417#0" expanded="true" />
             <element signature="e#2521#2522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
