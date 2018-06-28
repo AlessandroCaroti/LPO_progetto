@@ -46,4 +46,6 @@ public interface Visitor<T> {
 	T visitSingleStmt(Stmt stmt);
 
 	T visitVarStmt(Ident ident, Exp exp);
+
+	T visitOptionalLiteral(Exp exp);
 }

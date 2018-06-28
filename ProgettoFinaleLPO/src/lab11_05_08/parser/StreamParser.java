@@ -189,6 +189,8 @@ public class StreamParser implements Parser {
 			return parseMinus();
         case NOT:
             return parseNot();
+        case OPT:
+            return parseOpt();
 		case OPEN_LIST:
 			return parseList();
 		case OPEN_PAR:
@@ -221,7 +223,12 @@ public class StreamParser implements Parser {
 
 	private Invert parseNot() throws ParserException {
 		consume(NOT);
-		return new Invert(parseAtom());//todo forse è quà l'errore
+		return new Invert(parseAtom());
+	}
+
+	private OptionalLiteral parseOpt() throws ParserException {
+		consume(OPT);
+		return new OptionalLiteral(parseAtom());
 	}
 
 	private ListLiteral parseList() throws ParserException {

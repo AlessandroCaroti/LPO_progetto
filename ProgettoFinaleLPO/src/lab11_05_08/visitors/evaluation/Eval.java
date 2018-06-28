@@ -58,6 +58,7 @@ public class Eval implements Visitor<Value> {
 		return null;
 	}
 
+
 	// dynamic semantics for sequences of statements
 	// no value returned by the visitor
 
@@ -92,6 +93,11 @@ public class Eval implements Visitor<Value> {
 	@Override
 	public Value visitListLiteral(ExpSeq exps) {
 		return exps.accept(this);
+	}
+
+	@Override
+	public Value visitOptionalLiteral(Exp exp) {
+		return exp.accept(this);
 	}
 
 	@Override

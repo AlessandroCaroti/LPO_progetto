@@ -104,6 +104,11 @@ public class TypeCheck implements Visitor<Type> {
 	}
 
 	@Override
+	public Type visitOptionalLiteral(Exp exp) {
+		return new OptionalType(exp.accept(this));
+	}
+
+	@Override
 	public Type visitMul(Exp left, Exp right) {
 		checkBinOp(left, right, INT);
 		return INT;
