@@ -28,7 +28,7 @@ public class StreamTokenizer implements Tokenizer {
         final String binaryRegEx = "(0[b|B][0|1]+)";			// group 3
 		final String numRegEx    = "(0|[1-9][0-9]*)";           // group 4
 		final String skipRegEx   = "(\\s+|//.*)";               // group 5
-		final String symbolRegEx = "\\+|\\*|&&|==|=|\\(|\\)|;|,|\\{|\\}|-|::|:|\\[|\\]";
+		final String symbolRegEx = "\\+|\\*|&&|==|=|\\(|\\)|;|,|\\{|\\}|-|!|::|:|\\[|\\]";
 		regEx = boolRegEx   + "|" +
                 identRegEx  + "|" +
                 binaryRegEx + "|" +
@@ -58,6 +58,7 @@ public class StreamTokenizer implements Tokenizer {
 		symbols.put("{", OPEN_BLOCK);
 		symbols.put("}", CLOSE_BLOCK);
 		symbols.put("-", MINUS);
+		symbols.put("!", NOT);
 		symbols.put("[", OPEN_LIST);
 		symbols.put("]", CLOSE_LIST);
 	}

@@ -123,7 +123,6 @@ public class TypeCheck implements Visitor<Type> {
 
 	@Override
 	public Type visitEquivalent(Exp left, Exp right){
-        //todo da controllare non sono sicuro che sia giusto
         Type elemType = left.accept(this);
         elemType.checkEqual(right.accept(this));
         return BOOL;
@@ -132,6 +131,11 @@ public class TypeCheck implements Visitor<Type> {
 	@Override
 	public Type visitSign(Exp exp) {
 		return INT.checkEqual(exp.accept(this));
+	}
+
+	@Override
+	public Type visitNot(Exp exp) {
+		return BOOL.checkEqual(exp.accept(this));
 	}
 
 	@Override

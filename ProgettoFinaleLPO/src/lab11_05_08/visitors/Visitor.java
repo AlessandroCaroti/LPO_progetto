@@ -37,6 +37,8 @@ public interface Visitor<T> {
 
 	T visitSign(Exp exp);
 
+	T visitNot(Exp exp);
+
 	T visitIdent(String name);
 
 	T visitSingleExp(Exp exp);
