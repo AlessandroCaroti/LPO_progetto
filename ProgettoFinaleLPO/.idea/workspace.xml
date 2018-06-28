@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lab11_05_08/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
@@ -30,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StreamTokenizer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StreamTokenizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="35">
@@ -38,6 +38,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProveBinary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/src/ProveBinary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -206,12 +215,12 @@
       <option name="presentableId" value="Default" />
       <updated>1530109524856</updated>
       <workItem from="1530109528827" duration="1240000" />
-      <workItem from="1530170258797" duration="6160000" />
+      <workItem from="1530170258797" duration="6417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7400000" />
+    <option name="totallyTimeSpent" value="7657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,6 +233,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3133903" />
@@ -233,10 +243,10 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.65099716" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31623933" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20268457" />
       <window_info anchor="bottom" id="Bucklescript" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -405,13 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/Tokenizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -426,6 +429,30 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/ProveBinary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test/true/bin_lit01.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test/true/bin_op_prec01.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
         </state>
       </provider>
     </entry>
