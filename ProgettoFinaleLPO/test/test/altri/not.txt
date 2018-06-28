@@ -1,6 +1,0 @@
-print !true;
-print !false;
-print !false && false;
-print !(false && false);
-var x = !(5 == 5);
-print x

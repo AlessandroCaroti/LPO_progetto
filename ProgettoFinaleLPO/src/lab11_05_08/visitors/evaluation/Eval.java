@@ -122,11 +122,6 @@ public class Eval implements Visitor<Value> {
 	}
 
 	@Override
-	public Value visitNot(Exp exp) {
-		return new BoolValue(!exp.accept(this).asBool());
-	}
-
-	@Override
 	public Value visitIdent(String name) {
 		return env.lookup(new SimpleIdent(name));
 	}

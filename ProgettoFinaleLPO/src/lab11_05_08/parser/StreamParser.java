@@ -53,20 +53,12 @@ public class StreamParser implements Parser {
 	public Prog parseProg() throws ParserException {
 		tryNext(); // one look-ahead symbol
 		Prog prog = new ProgClass(parseStmtSeq());
-
-        //TODO rimmuovere stampa di test
-		System.out.println("********************************\n\n");
-
 		match(EOF);
 		return prog;
 	}
 
 	private StmtSeq parseStmtSeq() throws ParserException {
 		Stmt stmt = parseStmt();
-
-		//TODO rimmuovere stampa di test
-        System.out.println(stmt.toString());
-
 		if (tokenizer.tokenType() == STMT_SEP) {
 			tryNext();
 			return new MoreStmt(stmt, parseStmtSeq());
@@ -175,6 +167,7 @@ public class StreamParser implements Parser {
 
 
 
+    //TODO forse aggiungere altri che ora non prendo in considerazione
 	private Exp parseAtom() throws ParserException {
 		switch (tokenizer.tokenType()) {
 		default:
@@ -187,8 +180,6 @@ public class StreamParser implements Parser {
 			return parseIdent();
 		case MINUS:
 			return parseMinus();
-        case NOT:
-            return parseNot();
 		case OPEN_LIST:
 			return parseList();
 		case OPEN_PAR:
@@ -217,11 +208,6 @@ public class StreamParser implements Parser {
 	private Sign parseMinus() throws ParserException {
 		consume(MINUS); // or tryNext();
 		return new Sign(parseAtom());
-	}
-
-	private Invert parseNot() throws ParserException {
-		consume(NOT);
-		return new Invert(parseAtom());//todo forse è quà l'errore
 	}
 
 	private ListLiteral parseList() throws ParserException {

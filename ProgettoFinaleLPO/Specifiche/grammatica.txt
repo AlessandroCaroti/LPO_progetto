@@ -156,7 +156,7 @@ NUOVI TOKEN:
 *************************************************************************************************************************************************************
 
 TOKEN DA AGGIUNGERE:
-
+    -NOT
     -OPTIONAL
     -EMPTY
     -DEFINED
@@ -172,6 +172,6 @@ TOKE GIA AGGIUNTI:
     -BINARY
     -AND
     -EQUIVALENT
-    -NOT
+
 
 TOKEN TESTATI:
