@@ -119,11 +119,30 @@ public class StreamParser implements Parser {
 		return new ForEachStmt(ident, exp, stmts);
 	}
 
+
 	private Exp parseExp() throws ParserException {
+        Exp exp = parseEquivalent();
+        if(tokenizer.tokenType() == AND){
+            tryNext();
+            exp = new And(exp, parseExp());
+        }
+        return exp;
+	}
+
+	private Exp parseEquivalent() throws ParserException {
+        Exp exp = parsePrefix();
+        if(tokenizer.tokenType() == EQUIVALENT){
+            tryNext();
+            exp = new Equivalent(exp, parsePrefix());
+        }
+        return exp;
+	}
+
+	private Exp parsePrefix() throws ParserException {
 		Exp exp = parseAdd();
 		if (tokenizer.tokenType() == PREFIX) {
 			tryNext();
-			exp = new Prefix(exp, parseExp());
+			exp = new Prefix(exp, parseAdd());
 		}
 		return exp;
 	}
@@ -145,6 +164,8 @@ public class StreamParser implements Parser {
 		}
 		return exp;
 	}
+
+
 
     //TODO forse aggiungere altri che ora non prendo in considerazione
 	private Exp parseAtom() throws ParserException {

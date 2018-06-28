@@ -96,13 +96,24 @@ public class Eval implements Visitor<Value> {
 
 	@Override
 	public Value visitMul(Exp left, Exp right) {
-		return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
+        return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
 	}
 
 	@Override
 	public Value visitPrefix(Exp left, Exp right) {
 		Value el = left.accept(this);
 		return right.accept(this).asList().prefix(el);
+	}
+
+
+	@Override
+	public Value visitAnd(Exp left, Exp right){
+	    return new BoolValue(left.accept(this).asBool() && right.accept(this).asBool());
+	}
+
+	@Override
+	public Value visitEquivalent(Exp left, Exp right){
+	    return new BoolValue(left.accept(this).equals(right.accept(this)));
 	}
 
 	@Override

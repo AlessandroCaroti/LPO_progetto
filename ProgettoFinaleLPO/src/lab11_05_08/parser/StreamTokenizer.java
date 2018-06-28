@@ -47,6 +47,8 @@ public class StreamTokenizer implements Tokenizer {
 		symbols.put("+", PLUS);
 		symbols.put("*", TIMES);
 		symbols.put("::", PREFIX);
+		symbols.put("==", EQUIVALENT);
+		symbols.put("&&", AND);
 		symbols.put("=", ASSIGN);
 		symbols.put(":", IN);
 		symbols.put("(", OPEN_PAR);

@@ -27,6 +27,10 @@ public interface Visitor<T> {
 
 	T visitPrefix(Exp left, Exp right);
 
+	T visitAnd(Exp left, Exp right);
+
+	T visitEquivalent(Exp left, Exp right);
+
 	T visitPrintStmt(Exp exp);
 
 	T visitProg(StmtSeq stmtSeq);

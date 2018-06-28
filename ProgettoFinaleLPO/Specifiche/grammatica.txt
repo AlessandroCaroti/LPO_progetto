@@ -82,16 +82,16 @@ cose aggiunte:
       6)aggiunto in Stmt      :  {| if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)} [44]
 
 
-Prog ::= StmtSeq 'EOF'
-StmtSeq ::= Stmt (';' StmtSeq)?
-Stmt ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' |  if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
-ExpSeq ::= Exp (',' ExpSeq)?
-Exp ::= Cmp ('&&' Exp)?
-Cmp ::= CostList ('==' CostList)*
-CostList ::= Add ('::' Add)*
-Add ::= Mul ('+' Mul)*
-Mul::= Atom ('*' Atom)*
-Atom ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
+Prog        ::= StmtSeq 'EOF'
+StmtSeq     ::= Stmt (';' StmtSeq)?
+Stmt        ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' |  if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
+ExpSeq      ::= Exp (',' ExpSeq)?
+Exp         ::= Equivalent ('&&' Exp)?
+Equivalent  ::= Prefix ('==' Prefix)*
+Prefix      ::= Add ('::' Add)*
+Add         ::= Mul ('+' Mul)*
+Mul         ::= Atom ('*' Atom)*
+Atom        ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
 
 
 *****************************************************************************************************************************************************************************************************
@@ -161,9 +161,10 @@ TOKEN DA AGGIUNGERE:
     -EMPTY
     -DEFINED
     -GET
-    
+
     -AND
     -EQUIVALENT
+
     -IF
     -ELSE
     -DO
