@@ -191,6 +191,8 @@ public class StreamParser implements Parser {
             return parseNot();
         case OPT:
             return parseOpt();
+        case EMPTY:
+            return parseEmpty();
 		case OPEN_LIST:
 			return parseList();
 		case OPEN_PAR:
@@ -230,6 +232,11 @@ public class StreamParser implements Parser {
 		consume(OPT);
 		return new OptionalLiteral(parseAtom());
 	}
+
+	private OptionalLiteral parseEmpty() throws ParserException{
+	    consume(EMPTY);
+        return new OptionalLiteral(parseOpt(), true);
+    }
 
 	private ListLiteral parseList() throws ParserException {
 		consume(OPEN_LIST); // or tryNext();

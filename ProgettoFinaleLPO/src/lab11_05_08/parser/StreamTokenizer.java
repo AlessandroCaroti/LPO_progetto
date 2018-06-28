@@ -42,6 +42,7 @@ public class StreamTokenizer implements Tokenizer {
 		keywords.put("print", PRINT);
 		keywords.put("var", VAR);
 		keywords.put("opt", OPT);
+		keywords.put("empty", EMPTY);
 	}
 
 	static {

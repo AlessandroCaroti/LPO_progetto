@@ -4,11 +4,18 @@ import static java.util.Objects.requireNonNull;
 
 public class OptionalType implements Type {
     private final Type elemType;
+    private final boolean undefined;
 
     public static final String TYPE_NAME = "OPTIONAL";
 
     public OptionalType(Type elemType) {
         this.elemType = requireNonNull(elemType);
+        undefined = false;
+    }
+
+    public OptionalType(Type elemType, boolean undefined) {
+        this.elemType = requireNonNull(elemType);
+        this.undefined = undefined;
     }
 
     @Override
@@ -18,6 +25,8 @@ public class OptionalType implements Type {
         if (!(obj instanceof OptionalType))
             return false;
         OptionalType ot = (OptionalType) obj;
+        if(undefined && ot.undefined)
+            return true;
         return  this.elemType.equals(ot.elemType);
     }
 

@@ -93,6 +93,9 @@ Add         ::= Mul ('+' Mul)*
 Mul         ::= Atom ('*' Atom)*
 Atom        ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
 
+ATTENZIONE: la grammatica non è giusta, Atom deve essere aggiustato. empty, def e get possono prendere solo literal opzionali generati da 'opt' Atom
+Opt         ::= ('opt')* Atom | 'empty' Opt
+Atom        ::= '-' Atom | '!' Atom | 'def' Opt | 'get' Opt | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
 
 *****************************************************************************************************************************************************************************************************
 *****************************************************************************************************************************************************************************************************
@@ -157,7 +160,6 @@ NUOVI TOKEN:
 
 TOKEN DA AGGIUNGERE:
 
-    -OPTIONAL
     -EMPTY
     -DEFINED
     -GET
@@ -173,5 +175,6 @@ TOKE GIA AGGIUNTI:
     -AND
     -EQUIVALENT
     -NOT
+    -OPTIONAL
 
 TOKEN TESTATI:

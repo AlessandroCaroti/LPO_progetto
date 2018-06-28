@@ -2,12 +2,7 @@ package lab11_05_08.visitors.evaluation;
 
 import lab11_05_08.environments.EnvironmentException;
 import lab11_05_08.environments.GenEnvironment;
-import lab11_05_08.parser.ast.Exp;
-import lab11_05_08.parser.ast.ExpSeq;
-import lab11_05_08.parser.ast.Ident;
-import lab11_05_08.parser.ast.SimpleIdent;
-import lab11_05_08.parser.ast.Stmt;
-import lab11_05_08.parser.ast.StmtSeq;
+import lab11_05_08.parser.ast.*;
 import lab11_05_08.visitors.Visitor;
 
 public class Eval implements Visitor<Value> {
@@ -96,8 +91,11 @@ public class Eval implements Visitor<Value> {
 	}
 
 	@Override
-	public Value visitOptionalLiteral(Exp exp) {
-		return exp.accept(this);
+	public Value visitOptionalLiteral(Exp exp, boolean empty) {
+	    System.out.println(empty);
+        if(empty)
+            return new EmptyValue();
+		return new OptValue(exp.accept(this));
 	}
 
 	@Override
@@ -119,7 +117,9 @@ public class Eval implements Visitor<Value> {
 
 	@Override
 	public Value visitEquivalent(Exp left, Exp right){
-	    return new BoolValue(left.accept(this).equals(right.accept(this)));
+        Value acceptLeft  = left.accept(this);
+        Value acceptRight = right.accept(this);
+        return new BoolValue(left.accept(this).equals(right.accept(this)));
 	}
 
 	@Override

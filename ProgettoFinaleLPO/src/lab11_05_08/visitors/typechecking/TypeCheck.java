@@ -4,12 +4,7 @@ import static lab11_05_08.visitors.typechecking.PrimtType.*;
 
 import lab11_05_08.environments.EnvironmentException;
 import lab11_05_08.environments.GenEnvironment;
-import lab11_05_08.parser.ast.Exp;
-import lab11_05_08.parser.ast.ExpSeq;
-import lab11_05_08.parser.ast.Ident;
-import lab11_05_08.parser.ast.SimpleIdent;
-import lab11_05_08.parser.ast.Stmt;
-import lab11_05_08.parser.ast.StmtSeq;
+import lab11_05_08.parser.ast.*;
 import lab11_05_08.visitors.Visitor;
 
 public class TypeCheck implements Visitor<Type> {
@@ -104,8 +99,8 @@ public class TypeCheck implements Visitor<Type> {
 	}
 
 	@Override
-	public Type visitOptionalLiteral(Exp exp) {
-		return new OptionalType(exp.accept(this));
+	public Type visitOptionalLiteral(Exp exp, boolean undefined) {
+		return new OptionalType(exp.accept(this), undefined);
 	}
 
 	@Override
