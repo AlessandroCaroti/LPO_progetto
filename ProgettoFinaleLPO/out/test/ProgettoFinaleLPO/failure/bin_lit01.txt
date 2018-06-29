@@ -1,3 +1,0 @@
-// Syntax error: Expecting EOF, found IDENT('b')
-var x=0b
-

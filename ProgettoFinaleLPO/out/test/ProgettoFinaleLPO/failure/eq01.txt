@@ -1,2 +1,0 @@
-// Static error: Found INT, expected BOOL
-print false == 1 == 2 

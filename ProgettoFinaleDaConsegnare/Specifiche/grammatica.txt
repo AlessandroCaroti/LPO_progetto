@@ -1,0 +1,41 @@
+﻿******GRAMMATICA LABORATORI 10/11**********
+
+Prog    ::= StmtSeq 'EOF'
+StmtSeq ::= Stmt (';' StmtSeq)?
+Stmt    ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}'
+ExpSeq  ::= Exp (',' ExpSeq)?
+Exp     ::= Add ('::' Exp)?
+Add     ::= Mul ('+' Mul)*
+Mul     ::= Atom ('*' Atom)*
+Atom    ::= '-' Atom | '[' ExpSeq ']' | NUM | ID | '(' Exp ')'
+
+
+
+
+***********************************************************************************************
+****************************GRAMMATICA PROGETTO FINALE*****************************************
+
+GRAMMATICA BNF AMBIGUA:
+
+Prog ::= StmtSeq 'EOF'
+StmtSeq ::= Stmt | Stmt ';' StmtSeq
+Stmt ::= 'var' ID '=' Exp | ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' | if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
+ExpSeq ::= Exp | Exp ',' ExpSeq
+Exp ::= Exp BinOp Exp | '-' Exp | '[' ExpSeq ']' | NUM | ID  | BOOL | BINARY | '(' Exp ')' | !Exp | opt Exp  |empty Exp | def Exp | get Exp
+BinOp ::= '::' | '+' | '*' | '&&' | '=='
+
+
+
+
+GRAMMATICA EBNF NON AMBIGUA:
+
+Prog        ::= StmtSeq 'EOF'
+StmtSeq     ::= Stmt (';' StmtSeq)?
+Stmt        ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' |  if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
+ExpSeq      ::= Exp (',' ExpSeq)?
+Exp         ::= Equivalent ('&&' Exp)?
+Equivalent  ::= Prefix ('==' Prefix)*
+Prefix      ::= Add ('::' Add)*
+Add         ::= Mul ('+' Mul)*
+Mul         ::= Atom ('*' Atom)*
+Atom        ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'

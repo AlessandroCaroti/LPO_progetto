@@ -1,3 +1,0 @@
-// Static error: Found INT, expected BOOL
-do{print 42}while(42)
-
