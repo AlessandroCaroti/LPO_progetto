@@ -102,9 +102,18 @@ public class TypeCheck implements Visitor<Type> {
 	public Type visitOptionalLiteral(Exp exp, boolean undefined) {
 		//controllo che se la corrente espressione non è definita bisogna controllare che exp sia un litiral di tipo opzionale
 		Type typeRes = exp.accept(this);
-		if(undefined && !(exp instanceof OptionalLiteral))
+		if(undefined && !typeRes.isOpt()) {
 			throw new TypecheckerException(typeRes.toString(), OptionalType.TYPE_NAME);
+		}
 		return new OptionalType(typeRes,undefined);
+	}
+
+	@Override
+	public Type visitDefined(Exp exp){
+		Type typeRes = exp.accept(this);
+		if(!typeRes.isOpt())
+			throw new TypecheckerException(typeRes.toString(), OptionalType.TYPE_NAME);
+		return BOOL;
 	}
 
 	@Override

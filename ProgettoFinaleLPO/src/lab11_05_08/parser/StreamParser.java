@@ -193,6 +193,9 @@ public class StreamParser implements Parser {
             return parseOpt();
         case EMPTY:
             return parseEmpty();
+        case DEF:
+            return parseDef();
+            //todo add GET
 		case OPEN_LIST:
 			return parseList();
 		case OPEN_PAR:
@@ -238,6 +241,11 @@ public class StreamParser implements Parser {
         return new OptionalLiteral(parseAtom(), true);
     }
 
+    private Defined parseDef() throws ParserException{
+        consume(DEF);
+        return new Defined(parseAtom());
+    }
+	//todo add parseGet
 	private ListLiteral parseList() throws ParserException {
 		consume(OPEN_LIST); // or tryNext();
 		ExpSeq exps = parseExpSeq();

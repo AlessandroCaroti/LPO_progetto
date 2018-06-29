@@ -18,8 +18,6 @@ public interface Value {
 		throw new EvaluatorException("Expecting a list value");
 	}
 
-	//TODO forse definire qui il metodo get e def
-
     default boolean def(){
         throw new EvaluatorException("Expecting a optional value");
     }
