@@ -235,7 +235,7 @@ public class StreamParser implements Parser {
 
 	private OptionalLiteral parseEmpty() throws ParserException{
 	    consume(EMPTY);
-        return new OptionalLiteral(parseOpt(), true);
+        return new OptionalLiteral(parseAtom(), true);
     }
 
 	private ListLiteral parseList() throws ParserException {

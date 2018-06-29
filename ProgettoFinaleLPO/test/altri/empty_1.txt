@@ -1,0 +1,6 @@
+print empty opt 1;
+print empty empty opt 1;
+print empty opt 1 == empty opt 2;
+print empty opt 1 == empty opt false;
+print empty opt 1 == 1;
+print empty opt 1 == opt 1

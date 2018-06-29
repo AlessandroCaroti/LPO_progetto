@@ -100,7 +100,9 @@ public class TypeCheck implements Visitor<Type> {
 
 	@Override
 	public Type visitOptionalLiteral(Exp exp, boolean undefined) {
-		return new OptionalType(exp.accept(this), undefined);
+		if (undefined)
+			OPT.checkEqual(exp.accept(this));
+		return OPT;
 	}
 
 	@Override
