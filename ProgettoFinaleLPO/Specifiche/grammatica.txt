@@ -164,8 +164,6 @@ TOKEN DA AGGIUNGERE:
 
     -IF
     -ELSE
-    -DO
-    -WHILE
 
 TOKE GIA AGGIUNTI:
     -BOOL
@@ -177,5 +175,7 @@ TOKE GIA AGGIUNTI:
     -EMPTY
     -DEFINED
     -GET
+    -DO
+    -WHILE
 
 TOKEN TESTATI:

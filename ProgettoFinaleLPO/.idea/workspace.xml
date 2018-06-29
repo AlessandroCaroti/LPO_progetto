@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grammatica.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="grammatica.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3204">
-              <caret line="178" column="8" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
+            <state relative-caret-position="337">
+              <caret line="176" column="8" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="while_2.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="while_2.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/altri/while_2.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="11" lean-forward="true" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="126">
+              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -166,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/ast/Get.java" />
         <option value="$PROJECT_DIR$/test/altri/get.txt" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java" />
-        <option value="$PROJECT_DIR$/Specifiche/grammatica.txt" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/TokenType.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamTokenizer.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/Visitor.java" />
@@ -176,6 +175,7 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java" />
         <option value="$PROJECT_DIR$/test/altri/while_1.txt" />
         <option value="$PROJECT_DIR$/test/altri/while_2.txt" />
+        <option value="$PROJECT_DIR$/Specifiche/grammatica.txt" />
       </list>
     </option>
   </component>
@@ -320,7 +320,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63698000" />
+    <option name="totallyTimeSpent" value="63943000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,7 +343,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.27635327" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.35612535" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
@@ -802,17 +802,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
+    <entry file="file://$PROJECT_DIR$/test/altri/while_2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3204">
-          <caret line="178" column="8" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
+        <state relative-caret-position="126">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/altri/while_2.txt">
+    <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="11" lean-forward="true" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="337">
+          <caret line="176" column="8" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
         </state>
       </provider>
     </entry>
