@@ -11,4 +11,11 @@ public class EmptyValue extends PrimValue<String> {
         return  this == obj ||
                 obj instanceof EmptyValue;
     }
+
+    /*
+    @Override
+    public boolean def(){
+        return false;
+    }
+     */
 }

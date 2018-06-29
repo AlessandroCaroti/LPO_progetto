@@ -18,6 +18,11 @@ public class OptionalType implements Type {
         this.undefined = undefined;
     }
 
+    public Type getElemType() {
+        //todo forse deve essere ricorsivo
+        return elemType;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
