@@ -95,6 +95,8 @@ public class StreamParser implements Parser {
 			return parseAssignStmt();
 		case FOR:
 			return parseForEachStmt();
+        case DO:
+            return parseDoWhileStmt();
 		}
 	}
 
@@ -126,6 +128,18 @@ public class StreamParser implements Parser {
 		consume(CLOSE_BLOCK);
 		return new ForEachStmt(ident, exp, stmts);
 	}
+
+	private DoWhileStmt parseDoWhileStmt() throws ParserException{
+	    consume(DO);
+	    consume(OPEN_BLOCK);
+        StmtSeq stmts = parseStmtSeq();
+        consume(CLOSE_BLOCK);
+        consume(WHILE);
+        consume(OPEN_PAR);
+        Exp exp = parseExp();
+        consume(CLOSE_PAR);
+	    return new DoWhileStmt(stmts,exp);
+    }
 
 
 	private Exp parseExp() throws ParserException {

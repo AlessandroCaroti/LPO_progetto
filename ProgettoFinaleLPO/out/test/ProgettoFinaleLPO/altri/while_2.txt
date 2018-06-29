@@ -1,0 +1,8 @@
+var x = opt false;
+var c = get x;
+var i = 0;
+do{
+    print i;
+    i = i + 1;
+    print i
+}while(c)
