@@ -15,6 +15,8 @@ public interface Visitor<T> {
 
 	T visitIntLiteral(int value);
 
+	T visitBoolLiteral(boolean value);
+
 	T visitListLiteral(ExpSeq exps);
 
 	T visitMoreExp(Exp first, ExpSeq rest);
@@ -25,11 +27,17 @@ public interface Visitor<T> {
 
 	T visitPrefix(Exp left, Exp right);
 
+	T visitAnd(Exp left, Exp right);
+
+	T visitEquivalent(Exp left, Exp right);
+
 	T visitPrintStmt(Exp exp);
 
 	T visitProg(StmtSeq stmtSeq);
 
 	T visitSign(Exp exp);
+
+	T visitNot(Exp exp);
 
 	T visitIdent(String name);
 
@@ -38,4 +46,10 @@ public interface Visitor<T> {
 	T visitSingleStmt(Stmt stmt);
 
 	T visitVarStmt(Ident ident, Exp exp);
+
+	T visitOptionalLiteral(Exp exp, boolean empty);
+
+	T visitDefined(Exp exp);
+
+	T visitGet(Exp exp);
 }
