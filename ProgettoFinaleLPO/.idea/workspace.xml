@@ -26,15 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypeCheck.java">
+      <file leaf-file-name="spec.ml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Specifiche/spec.ml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="133" column="31" lean-forward="true" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
-              <folding>
-                <element signature="e#2092#2093#0" expanded="true" />
-                <element signature="e#2119#2120#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1584">
+              <caret line="187" column="53" selection-start-line="187" selection-start-column="53" selection-end-line="187" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListValue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/ListValue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-246">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -42,8 +47,8 @@
       <file leaf-file-name="ListType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/ListType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            <state relative-caret-position="252">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="e#246#247#0" expanded="true" />
                 <element signature="e#293#294#0" expanded="true" />
@@ -52,20 +57,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StreamParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java">
+      <file leaf-file-name="OptionalType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2896">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="141">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spec.ml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Specifiche/spec.ml">
+      <file leaf-file-name="Type.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/Type.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1728">
-              <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+            <state relative-caret-position="198">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Value.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Value.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptValue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/OptValue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="e#127#128#0" expanded="true" />
+                <element signature="e#155#156#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmptyValue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/EmptyValue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypeCheck.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypeCheck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="41" column="50" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="50" />
+              <folding>
+                <element signature="e#2092#2093#0" expanded="true" />
+                <element signature="e#2119#2120#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListLiteral.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/ListLiteral.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -81,9 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EXP_SEP</find>
-      <find>Tokenizer</find>
-      <find>OPEN_LI</find>
       <find>a</find>
       <find>add</find>
       <find>opt</find>
@@ -109,8 +164,11 @@
       <find>System.out</find>
       <find>Equal</find>
       <find>checkBinOp</find>
-      <find>get_elem_type_opt</find>
       <find>Eq</find>
+      <find>List</find>
+      <find>getElemType</find>
+      <find>getListElemType</find>
+      <find>get_elem_type_opt</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Alessandro\Documents\GitHub\LPO_progetto\ProgettoFinaleLPO\src\lab11_05_08\visitors</dir>
@@ -133,10 +191,7 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/ast/EmptyOptionalLiteral.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/ast/EmptyLiteral.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/ast/EmptyType.java" />
-        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/EmptyValue.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/Visitor.java" />
-        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/OptValue.java" />
-        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/ast/OptionalLiteral.java" />
         <option value="$PROJECT_DIR$/Specifiche/grammatica.txt" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/PrimtType.java" />
@@ -144,6 +199,11 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java" />
         <option value="$PROJECT_DIR$/test/altri/empty_1.txt" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypeCheck.java" />
+        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/Type.java" />
+        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Value.java" />
+        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/OptValue.java" />
+        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java" />
+        <option value="$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/EmptyValue.java" />
       </list>
     </option>
   </component>
@@ -179,6 +239,47 @@
               <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
               <item name="Specifiche" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lab11_05_08" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lab11_05_08" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lab11_05_08" type="462c0819:PsiDirectoryNode" />
+              <item name="visitors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lab11_05_08" type="462c0819:PsiDirectoryNode" />
+              <item name="visitors" type="462c0819:PsiDirectoryNode" />
+              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lab11_05_08" type="462c0819:PsiDirectoryNode" />
+              <item name="visitors" type="462c0819:PsiDirectoryNode" />
+              <item name="typechecking" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -261,12 +362,12 @@
       <updated>1530109524856</updated>
       <workItem from="1530109528827" duration="1240000" />
       <workItem from="1530170258797" duration="6417000" />
-      <workItem from="1530256302712" duration="3764000" />
+      <workItem from="1530256302712" duration="6621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41086000" />
+    <option name="totallyTimeSpent" value="43943000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -282,17 +383,17 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="7" />
-      <window_info anchor="bottom" id="TODO" order="15" weight="0.3133903" />
+      <window_info anchor="bottom" id="TODO" order="15" visible="true" weight="0.17806268" />
       <window_info anchor="bottom" id="Messages" order="21" weight="0.32905984" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="bottom" id="Event Log" order="20" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="19" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="18" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.2735043" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.19373219" />
       <window_info anchor="bottom" id="Terminal" order="17" />
       <window_info id="Designer" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.15973154" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19530201" />
       <window_info anchor="bottom" id="Bucklescript" order="16" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -357,40 +458,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/SingleExp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#284#285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/ListLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypecheckerException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#259#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test/altri/opt_3.txt" />
-    <entry file="file://$PROJECT_DIR$/test/test/altri/opt_2.txt" />
     <entry file="file://$PROJECT_DIR$/test/test/altri/opt.txt" />
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/TokenType.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -481,24 +548,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/EmptyLiteral.java" />
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/IntValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
-          <folding>
-            <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#145#146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/Equivalent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -509,45 +558,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/PrimValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/EmptyType.java" />
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/BoolValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#130#131#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/OptValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#155#156#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/EmptyValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/IntLiteral.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -558,17 +569,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/PrintStmt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#444#445#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -594,27 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/Visitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/AST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/OptionalLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="641">
@@ -626,27 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/PrimtType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Eval.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="93" column="63" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -668,13 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2896">
           <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Specifiche/spec.ml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1728">
-          <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -700,10 +658,100 @@
     <entry file="file://$PROJECT_DIR$/test/failure/empty01.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/Visitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/PrimtType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/AST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/BoolLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/Exp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/OptionalLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/BoolValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Eval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="93" column="63" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/IntValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#145#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/PrimValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/ListType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="252">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="e#246#247#0" expanded="true" />
             <element signature="e#293#294#0" expanded="true" />
@@ -711,14 +759,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/ListValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/TypeCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="133" column="31" lean-forward="true" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+        <state relative-caret-position="104">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="50" />
           <folding>
             <element signature="e#2092#2093#0" expanded="true" />
             <element signature="e#2119#2120#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/parser/ast/ListLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/Value.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/typechecking/OptionalType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/OptValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#127#128#0" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab11_05_08/visitors/evaluation/EmptyValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Specifiche/spec.ml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1584">
+          <caret line="187" column="53" selection-start-line="187" selection-start-column="53" selection-end-line="187" selection-end-column="53" />
         </state>
       </provider>
     </entry>
