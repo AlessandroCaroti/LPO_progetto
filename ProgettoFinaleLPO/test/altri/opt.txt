@@ -1,0 +1,17 @@
+var x  = opt 5;
+var xx = opt 5;
+var y  = opt 6;
+var a  = opt true;
+var aa = opt true;
+var b  = opt false;
+
+print x;
+print y;
+print (x == x);
+print (x == xx);
+print (x == y);
+
+print a;
+print b;
+print (a == aa);
+print (a == b)

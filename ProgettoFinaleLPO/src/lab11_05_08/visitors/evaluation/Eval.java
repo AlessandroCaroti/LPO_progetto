@@ -2,12 +2,7 @@ package lab11_05_08.visitors.evaluation;
 
 import lab11_05_08.environments.EnvironmentException;
 import lab11_05_08.environments.GenEnvironment;
-import lab11_05_08.parser.ast.Exp;
-import lab11_05_08.parser.ast.ExpSeq;
-import lab11_05_08.parser.ast.Ident;
-import lab11_05_08.parser.ast.SimpleIdent;
-import lab11_05_08.parser.ast.Stmt;
-import lab11_05_08.parser.ast.StmtSeq;
+import lab11_05_08.parser.ast.*;
 import lab11_05_08.visitors.Visitor;
 
 public class Eval implements Visitor<Value> {
@@ -46,6 +41,15 @@ public class Eval implements Visitor<Value> {
 		return null;
 	}
 
+	public Value visitDoWhileStmt(Exp cond, StmtSeq block){
+	    do {
+	        env.enterLevel();
+	        block.accept(this);
+	        env.exitLevel();
+        }while (cond.accept(this).asBool());
+	    return null;
+    }
+
 	@Override
 	public Value visitPrintStmt(Exp exp) {
 		System.out.println(exp.accept(this));
@@ -57,6 +61,7 @@ public class Eval implements Visitor<Value> {
 		env.dec(ident, exp.accept(this));
 		return null;
 	}
+
 
 	// dynamic semantics for sequences of statements
 	// no value returned by the visitor
@@ -87,13 +92,34 @@ public class Eval implements Visitor<Value> {
 	}
 
 	@Override
+	public Value visitBoolLiteral(boolean value) {return new BoolValue(value);}
+
+	@Override
 	public Value visitListLiteral(ExpSeq exps) {
 		return exps.accept(this);
 	}
 
 	@Override
+	public Value visitOptionalLiteral(Exp exp, boolean empty) {
+        if(empty)
+            return new EmptyValue();
+		return new OptValue(exp.accept(this));
+	}
+
+	@Override
+	public Value visitDefined(Exp exp){
+		return new BoolValue(exp.accept(this).def());
+	}
+
+    @Override
+    public Value visitGet(Exp exp){
+        return exp.accept(this).get();
+    }
+
+
+    @Override
 	public Value visitMul(Exp left, Exp right) {
-		return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
+        return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
 	}
 
 	@Override
@@ -102,9 +128,27 @@ public class Eval implements Visitor<Value> {
 		return right.accept(this).asList().prefix(el);
 	}
 
+
+	@Override
+	public Value visitAnd(Exp left, Exp right){
+	    return new BoolValue(left.accept(this).asBool() && right.accept(this).asBool());
+	}
+
+	@Override
+	public Value visitEquivalent(Exp left, Exp right){
+        Value acceptLeft  = left.accept(this);
+        Value acceptRight = right.accept(this);
+        return new BoolValue(left.accept(this).equals(right.accept(this)));
+	}
+
 	@Override
 	public Value visitSign(Exp exp) {
 		return new IntValue(-exp.accept(this).asInt());
+	}
+
+	@Override
+	public Value visitNot(Exp exp) {
+		return new BoolValue(!exp.accept(this).asBool());
 	}
 
 	@Override
