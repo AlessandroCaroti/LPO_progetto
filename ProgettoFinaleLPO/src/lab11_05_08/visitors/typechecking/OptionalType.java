@@ -15,8 +15,6 @@ public class OptionalType implements Type {
     }
 
     public Type getElemType() {
-        if(elemType instanceof OptionalType)
-            return ((OptionalType) elemType).getElemType();
         return elemType;
     }
 

@@ -117,6 +117,14 @@ public class TypeCheck implements Visitor<Type> {
 	}
 
 	@Override
+	public Type visitGet(Exp exp){
+		Type typeRes = exp.accept(this);
+		if(!typeRes.isOpt())
+			throw new TypecheckerException(typeRes.toString(), OptionalType.TYPE_NAME);
+		return typeRes.getOptElemType();
+	}
+
+	@Override
 	public Type visitMul(Exp left, Exp right) {
 		checkBinOp(left, right, INT);
 		return INT;

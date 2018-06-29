@@ -102,7 +102,13 @@ public class Eval implements Visitor<Value> {
 		return new BoolValue(exp.accept(this).def());
 	}
 
-	@Override
+    @Override
+    public Value visitGet(Exp exp){
+        return exp.accept(this).get();
+    }
+
+
+    @Override
 	public Value visitMul(Exp left, Exp right) {
         return new IntValue(left.accept(this).asInt() * right.accept(this).asInt());
 	}

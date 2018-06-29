@@ -50,7 +50,6 @@ public interface Visitor<T> {
 	T visitOptionalLiteral(Exp exp, boolean empty);
 
 	T visitDefined(Exp exp);
-	/*
+
 	T visitGet(Exp exp);
-	 */
 }
