@@ -47,6 +47,8 @@ public class StreamTokenizer implements Tokenizer {
 		keywords.put("get", GET);
 		keywords.put("do", DO);
 		keywords.put("while", WHILE);
+		keywords.put("if", IF);
+		keywords.put("else", ELSE);
 	}
 
 	static {

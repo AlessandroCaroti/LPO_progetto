@@ -50,7 +50,21 @@ public class Eval implements Visitor<Value> {
 	    return null;
     }
 
-	@Override
+    @Override
+    public Value visitIfElseStmt(Exp cond, StmtSeq block1, StmtSeq block2){
+	    if(cond.accept(this).asBool()){
+	        env.enterLevel();
+	        block1.accept(this);
+	        env.exitLevel();
+        }else if (block2!=null){
+            env.enterLevel();
+            block2.accept(this);
+            env.exitLevel();
+        }
+	    return null;
+    }
+
+    @Override
 	public Value visitPrintStmt(Exp exp) {
 		System.out.println(exp.accept(this));
 		return null;

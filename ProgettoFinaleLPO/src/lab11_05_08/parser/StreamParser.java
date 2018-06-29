@@ -97,6 +97,8 @@ public class StreamParser implements Parser {
 			return parseForEachStmt();
         case DO:
             return parseDoWhileStmt();
+        case IF:
+            return parseIfElseStmt();
 		}
 	}
 
@@ -139,6 +141,24 @@ public class StreamParser implements Parser {
         Exp exp = parseExp();
         consume(CLOSE_PAR);
 	    return new DoWhileStmt(stmts,exp);
+    }
+
+    private IfElseStmt parseIfElseStmt() throws ParserException{
+	    consume(IF);
+	    consume(OPEN_PAR);
+        Exp exp = parseExp();
+        consume(CLOSE_PAR);
+        consume(OPEN_BLOCK);
+        StmtSeq stmts1 = parseStmtSeq();
+        consume(CLOSE_BLOCK);
+        if(tokenizer.tokenType() == ELSE){
+            consume(ELSE);
+            consume(OPEN_BLOCK);
+            StmtSeq stmts2 = parseStmtSeq();
+            consume(CLOSE_BLOCK);
+            return new IfElseStmt(exp,stmts1,stmts2);
+        }
+	    return new IfElseStmt(exp,stmts1);
     }
 
 

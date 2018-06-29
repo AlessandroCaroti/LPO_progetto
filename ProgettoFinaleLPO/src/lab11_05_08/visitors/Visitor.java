@@ -15,6 +15,8 @@ public interface Visitor<T> {
 
 	T visitDoWhileStmt(Exp cond, StmtSeq block);
 
+	T visitIfElseStmt(Exp cond, StmtSeq block1, StmtSeq block2);
+
 	T visitIntLiteral(int value);
 
 	T visitBoolLiteral(boolean value);

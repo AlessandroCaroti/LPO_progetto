@@ -1,0 +1,10 @@
+var c = true;
+var i = 0;
+do{
+    i = i + 2;
+    print i;
+    if(i == 6){
+        c = false
+    }
+}while(c);
+print i

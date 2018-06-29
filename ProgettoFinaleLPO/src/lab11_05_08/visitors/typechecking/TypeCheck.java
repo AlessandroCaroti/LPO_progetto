@@ -47,11 +47,23 @@ public class TypeCheck implements Visitor<Type> {
 		return null;
 	}
 
+	@Override
 	public Type visitDoWhileStmt(Exp cond, StmtSeq block)
 	{
 		BOOL.checkEqual(cond.accept(this));
 		env.enterLevel();
 		block.accept(this);
+		env.exitLevel();
+		return null;
+	}
+
+	@Override
+	public Type visitIfElseStmt(Exp cond, StmtSeq block1, StmtSeq block2){
+		BOOL.checkEqual(cond.accept(this));
+		env.enterLevel();
+		block1.accept(this);
+		if(block2!=null)
+			block2.accept(this);
 		env.exitLevel();
 		return null;
 	}
