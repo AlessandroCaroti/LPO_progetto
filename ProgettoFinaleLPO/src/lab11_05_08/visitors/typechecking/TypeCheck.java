@@ -4,12 +4,7 @@ import static lab11_05_08.visitors.typechecking.PrimtType.*;
 
 import lab11_05_08.environments.EnvironmentException;
 import lab11_05_08.environments.GenEnvironment;
-import lab11_05_08.parser.ast.Exp;
-import lab11_05_08.parser.ast.ExpSeq;
-import lab11_05_08.parser.ast.Ident;
-import lab11_05_08.parser.ast.SimpleIdent;
-import lab11_05_08.parser.ast.Stmt;
-import lab11_05_08.parser.ast.StmtSeq;
+import lab11_05_08.parser.ast.*;
 import lab11_05_08.visitors.Visitor;
 
 public class TypeCheck implements Visitor<Type> {
@@ -93,9 +88,21 @@ public class TypeCheck implements Visitor<Type> {
 		return INT;
 	}
 
+    @Override
+    public Type visitBoolLiteral(boolean value) {
+        return BOOL;
+    }
+
 	@Override
 	public Type visitListLiteral(ExpSeq exps) {
 		return new ListType(exps.accept(this));
+	}
+
+	@Override
+	public Type visitOptionalLiteral(Exp exp, boolean undefined) {
+		if (undefined)
+			OPT.checkEqual(exp.accept(this));
+		return OPT;
 	}
 
 	@Override
@@ -111,8 +118,26 @@ public class TypeCheck implements Visitor<Type> {
 	}
 
 	@Override
+	public Type visitAnd(Exp left, Exp right){
+	    checkBinOp(left, right, BOOL);
+	    return BOOL;
+	}
+
+	@Override
+	public Type visitEquivalent(Exp left, Exp right){
+        Type elemType = left.accept(this);
+        elemType.checkEqual(right.accept(this));
+        return BOOL;
+	}
+
+	@Override
 	public Type visitSign(Exp exp) {
 		return INT.checkEqual(exp.accept(this));
+	}
+
+	@Override
+	public Type visitNot(Exp exp) {
+		return BOOL.checkEqual(exp.accept(this));
 	}
 
 	@Override

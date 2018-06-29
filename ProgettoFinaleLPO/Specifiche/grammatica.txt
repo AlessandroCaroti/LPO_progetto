@@ -82,17 +82,20 @@ cose aggiunte:
       6)aggiunto in Stmt      :  {| if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)} [44]
 
 
-Prog ::= StmtSeq 'EOF'
-StmtSeq ::= Stmt (';' StmtSeq)?
-Stmt ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' |  if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
-ExpSeq ::= Exp (',' ExpSeq)?
-Exp ::= Cmp ('&&' Exp)?
-Cmp ::= CostList ('==' CostList)*
-CostList ::= Add ('::' Add)*
-Add ::= Mul ('+' Mul)*
-Mul::= Atom ('*' Atom)*
-Atom ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
+Prog        ::= StmtSeq 'EOF'
+StmtSeq     ::= Stmt (';' StmtSeq)?
+Stmt        ::= 'var'? ID '=' Exp | 'print' Exp |  'for' ID ':' Exp '{' StmtSeq '}' |  if (Exp) {StmtSeq} (else {StmtSeq})? | do {StmtSeq} while (Exp)
+ExpSeq      ::= Exp (',' ExpSeq)?
+Exp         ::= Equivalent ('&&' Exp)?
+Equivalent  ::= Prefix ('==' Prefix)*
+Prefix      ::= Add ('::' Add)*
+Add         ::= Mul ('+' Mul)*
+Mul         ::= Atom ('*' Atom)*
+Atom        ::= '-' Atom | '!' Atom | 'opt' Atom | 'empty' Atom | 'def' Atom | 'get' Atom | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
 
+ATTENZIONE: la grammatica non è giusta, Atom deve essere aggiustato. empty, def e get possono prendere solo literal opzionali generati da 'opt' Atom
+Opt         ::= ('opt')* Atom | 'empty' Opt
+Atom        ::= '-' Atom | '!' Atom | 'def' Opt | 'get' Opt | '[' ExpSeq ']' | NUM | ID |  BOOL | BINARY | '(' Exp ')'
 
 *****************************************************************************************************************************************************************************************************
 *****************************************************************************************************************************************************************************************************
@@ -127,7 +130,8 @@ NUOVI TOKEN:
 
 
 
-    tokenGiàEsistenti:
+    tokenGiàEsistenti:(specificate in StreamTokenizer.java)
+
         $$)TOKEN            simbolo\i                   Descrizione
 
         **)EOF              BHO                         fine del file (non so il simbolo)
@@ -137,13 +141,13 @@ NUOVI TOKEN:
         **)IN               :                           operatore associato al for, è il corrispettivo dell' EACH in java
         **)FOR              for                         ciclo
         **)PRINT            print                       stampa
-        **)PREFIX           BHO
+        **)PREFIX           ::
         **)VAR              var                         inizio dichiarazione variabile
         **)PLUS             +                           addizione
         **)TIMES            *                           moltiplicazione
         **)ASSIGN           =                           assegnazione
-        **)OPEN_PAR         (                           NON NE SONO SICURO MA SONO LE UNICHE CHE SONO RIMASTE, SCELTE PER ESCLUSIONE
-        **)CLOSE_PAR        )                           NON NE SONO SICURO MA SONO LE UNICHE CHE SONO RIMASTE, SCELTE PER ESCLUSIONE
+        **)OPEN_PAR         (
+        **)CLOSE_PAR        )
         **)STMT_SEP         ;                           separatora tra 2 STMT
         **)EXP_SEP          ,                           penso separatore di EXP
         **)OPEN_BLOCK       {                           penso aperta graffa
@@ -151,3 +155,26 @@ NUOVI TOKEN:
         **)MINUS            -                           sottrazione
         **)OPEN_LIST        [                           apetura di una lista
         **)CLOSE_LIST       ]                           chiusura di una lista
+
+*************************************************************************************************************************************************************
+
+TOKEN DA AGGIUNGERE:
+
+    -EMPTY
+    -DEFINED
+    -GET
+
+    -IF
+    -ELSE
+    -DO
+    -WHILE
+
+TOKE GIA AGGIUNTI:
+    -BOOL
+    -BINARY
+    -AND
+    -EQUIVALENT
+    -NOT
+    -OPTIONAL
+
+TOKEN TESTATI:
