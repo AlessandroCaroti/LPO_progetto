@@ -6,7 +6,7 @@ do{
     if(i == 5){
         c = false
     }else{
-        i = (i - 1)
+        i = i + - 1
     }
 }while(c);
 print i
