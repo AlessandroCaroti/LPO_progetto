@@ -3,6 +3,7 @@ package lab11_05_08.parser;
 import static lab11_05_08.parser.TokenType.*;
 
 import lab11_05_08.parser.ast.*;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 /*
 Prog ::= StmtSeq 'EOF'
@@ -52,12 +53,20 @@ public class StreamParser implements Parser {
 	public Prog parseProg() throws ParserException {
 		tryNext(); // one look-ahead symbol
 		Prog prog = new ProgClass(parseStmtSeq());
+
+        //TODO rimmuovere stampa di test
+		System.out.println("********************************\n\n");
+
 		match(EOF);
 		return prog;
 	}
 
 	private StmtSeq parseStmtSeq() throws ParserException {
 		Stmt stmt = parseStmt();
+
+		//TODO rimmuovere stampa di test
+        System.out.println(stmt.toString());
+
 		if (tokenizer.tokenType() == STMT_SEP) {
 			tryNext();
 			return new MoreStmt(stmt, parseStmtSeq());
@@ -86,6 +95,10 @@ public class StreamParser implements Parser {
 			return parseAssignStmt();
 		case FOR:
 			return parseForEachStmt();
+        case DO:
+            return parseDoWhileStmt();
+        case IF:
+            return parseIfElseStmt();
 		}
 	}
 
@@ -118,11 +131,60 @@ public class StreamParser implements Parser {
 		return new ForEachStmt(ident, exp, stmts);
 	}
 
+	private DoWhileStmt parseDoWhileStmt() throws ParserException{
+	    consume(DO);
+	    consume(OPEN_BLOCK);
+        StmtSeq stmts = parseStmtSeq();
+        consume(CLOSE_BLOCK);
+        consume(WHILE);
+        consume(OPEN_PAR);
+        Exp exp = parseExp();
+        consume(CLOSE_PAR);
+	    return new DoWhileStmt(stmts,exp);
+    }
+
+    private IfElseStmt parseIfElseStmt() throws ParserException{
+	    consume(IF);
+	    consume(OPEN_PAR);
+        Exp exp = parseExp();
+        consume(CLOSE_PAR);
+        consume(OPEN_BLOCK);
+        StmtSeq stmts1 = parseStmtSeq();
+        consume(CLOSE_BLOCK);
+        if(tokenizer.tokenType() == ELSE){
+            consume(ELSE);
+            consume(OPEN_BLOCK);
+            StmtSeq stmts2 = parseStmtSeq();
+            consume(CLOSE_BLOCK);
+            return new IfElseStmt(exp,stmts1,stmts2);
+        }
+	    return new IfElseStmt(exp,stmts1);
+    }
+
+
 	private Exp parseExp() throws ParserException {
+        Exp exp = parseEquivalent();
+        if(tokenizer.tokenType() == AND){
+            tryNext();
+            exp = new And(exp, parseExp());
+        }
+        return exp;
+	}
+
+	private Exp parseEquivalent() throws ParserException {
+        Exp exp = parsePrefix();
+        if(tokenizer.tokenType() == EQUIVALENT){
+            tryNext();
+            exp = new Equivalent(exp, parsePrefix());
+        }
+        return exp;
+	}
+
+	private Exp parsePrefix() throws ParserException {
 		Exp exp = parseAdd();
 		if (tokenizer.tokenType() == PREFIX) {
 			tryNext();
-			exp = new Prefix(exp, parseExp());
+			exp = new Prefix(exp, parseAdd());
 		}
 		return exp;
 	}
@@ -145,17 +207,30 @@ public class StreamParser implements Parser {
 		return exp;
 	}
 
-    //TODO forse aggiungere BOOL e BINARY e altri che ora non prendo in considerazione
+
+
 	private Exp parseAtom() throws ParserException {
 		switch (tokenizer.tokenType()) {
 		default:
 			unexpectedTokenError();
 		case NUM:
 			return parseNum();
+        case BOOL:
+            return parseBool();
 		case IDENT:
 			return parseIdent();
 		case MINUS:
 			return parseMinus();
+        case NOT:
+            return parseNot();
+        case OPT:
+            return parseOpt();
+        case EMPTY:
+            return parseEmpty();
+        case DEF:
+            return parseDef();
+        case GET:
+            return parseGet();
 		case OPEN_LIST:
 			return parseList();
 		case OPEN_PAR:
@@ -169,19 +244,47 @@ public class StreamParser implements Parser {
 		return new IntLiteral(val);
 	}
 
+	private BoolLiteral parseBool() throws ParserException {
+	    boolean val = tokenizer.boolValue();
+        consume(BOOL);
+        return  new BoolLiteral(val);
+    }
+
 	private Ident parseIdent() throws ParserException {
 		String name = tokenizer.tokenString();
 		consume(IDENT); // or tryNext();
 		return new SimpleIdent(name);
 	}
 
-    //TODO forse aggiungere parseBOOL() e parseBINARY()
-
 	private Sign parseMinus() throws ParserException {
 		consume(MINUS); // or tryNext();
 		return new Sign(parseAtom());
 	}
 
+	private Invert parseNot() throws ParserException {
+		consume(NOT);
+		return new Invert(parseAtom());
+	}
+
+	private OptionalLiteral parseOpt() throws ParserException {
+		consume(OPT);
+		return new OptionalLiteral(parseAtom());
+	}
+
+	private OptionalLiteral parseEmpty() throws ParserException{
+	    consume(EMPTY);
+        return new OptionalLiteral(parseAtom(), true);
+    }
+
+    private Defined parseDef() throws ParserException{
+        consume(DEF);
+        return new Defined(parseAtom());
+    }
+
+    private Get parseGet() throws ParserException{
+	    consume(GET);
+	    return new Get(parseAtom());
+    }
 	private ListLiteral parseList() throws ParserException {
 		consume(OPEN_LIST); // or tryNext();
 		ExpSeq exps = parseExpSeq();

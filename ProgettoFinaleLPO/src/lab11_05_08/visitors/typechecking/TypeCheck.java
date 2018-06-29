@@ -4,12 +4,7 @@ import static lab11_05_08.visitors.typechecking.PrimtType.*;
 
 import lab11_05_08.environments.EnvironmentException;
 import lab11_05_08.environments.GenEnvironment;
-import lab11_05_08.parser.ast.Exp;
-import lab11_05_08.parser.ast.ExpSeq;
-import lab11_05_08.parser.ast.Ident;
-import lab11_05_08.parser.ast.SimpleIdent;
-import lab11_05_08.parser.ast.Stmt;
-import lab11_05_08.parser.ast.StmtSeq;
+import lab11_05_08.parser.ast.*;
 import lab11_05_08.visitors.Visitor;
 
 public class TypeCheck implements Visitor<Type> {
@@ -48,6 +43,27 @@ public class TypeCheck implements Visitor<Type> {
 		env.enterLevel();
 		env.dec(ident, ty);
 		block.accept(this);
+		env.exitLevel();
+		return null;
+	}
+
+	@Override
+	public Type visitDoWhileStmt(Exp cond, StmtSeq block)
+	{
+		BOOL.checkEqual(cond.accept(this));
+		env.enterLevel();
+		block.accept(this);
+		env.exitLevel();
+		return null;
+	}
+
+	@Override
+	public Type visitIfElseStmt(Exp cond, StmtSeq block1, StmtSeq block2){
+		BOOL.checkEqual(cond.accept(this));
+		env.enterLevel();
+		block1.accept(this);
+		if(block2!=null)
+			block2.accept(this);
 		env.exitLevel();
 		return null;
 	}
@@ -93,9 +109,40 @@ public class TypeCheck implements Visitor<Type> {
 		return INT;
 	}
 
+    @Override
+    public Type visitBoolLiteral(boolean value) {
+        return BOOL;
+    }
+
 	@Override
 	public Type visitListLiteral(ExpSeq exps) {
 		return new ListType(exps.accept(this));
+	}
+
+	@Override
+	public Type visitOptionalLiteral(Exp exp, boolean undefined) {
+		//controllo che se la corrente espressione non è definita bisogna controllare che exp sia un litiral di tipo opzionale
+		Type typeRes = exp.accept(this);
+		if(undefined && !typeRes.isOpt()) {
+			throw new TypecheckerException(typeRes.toString(), OptionalType.TYPE_NAME);
+		}
+		return new OptionalType(typeRes,undefined);
+	}
+
+	@Override
+	public Type visitDefined(Exp exp){
+		Type typeRes = exp.accept(this);
+		if(!typeRes.isOpt())
+			throw new TypecheckerException(typeRes.toString(), OptionalType.TYPE_NAME);
+		return BOOL;
+	}
+
+	@Override
+	public Type visitGet(Exp exp){
+		Type typeRes = exp.accept(this);
+		if(!typeRes.isOpt())
+			throw new TypecheckerException(typeRes.toString(), OptionalType.TYPE_NAME);
+		return typeRes.getOptElemType();
 	}
 
 	@Override
@@ -111,8 +158,26 @@ public class TypeCheck implements Visitor<Type> {
 	}
 
 	@Override
+	public Type visitAnd(Exp left, Exp right){
+	    checkBinOp(left, right, BOOL);
+	    return BOOL;
+	}
+
+	@Override
+	public Type visitEquivalent(Exp left, Exp right){
+        Type elemType = left.accept(this);
+        elemType.checkEqual(right.accept(this));
+        return BOOL;
+	}
+
+	@Override
 	public Type visitSign(Exp exp) {
 		return INT.checkEqual(exp.accept(this));
+	}
+
+	@Override
+	public Type visitNot(Exp exp) {
+		return BOOL.checkEqual(exp.accept(this));
 	}
 
 	@Override
