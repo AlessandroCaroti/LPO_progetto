@@ -12,10 +12,9 @@ public class EmptyValue extends PrimValue<String> {
                 obj instanceof EmptyValue;
     }
 
-    /*
+
     @Override
     public boolean def(){
         return false;
     }
-     */
 }

@@ -19,7 +19,7 @@ public interface Value {
 	}
 
 	//TODO forse definire qui il metodo get e def
-    /*
+
     default boolean def(){
         throw new EvaluatorException("Expecting a optional value");
     }
@@ -27,5 +27,5 @@ public interface Value {
     default Value get(){
         throw new EvaluatorException("Expecting a optional value");
     }
-     */
+
 }

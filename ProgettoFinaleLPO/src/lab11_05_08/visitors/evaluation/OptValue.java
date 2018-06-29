@@ -20,19 +20,16 @@ public class OptValue extends PrimValue<Value>{
         return "opt "+ this.value.toString();
     }
 
-    /*
     @Override
     public boolean def(){
         return true;
     }
 
     @Override
-    Value get(){
-        if(!(this.value instanceof OptValue))
-            return value;
-        return ((OptValue) value).get();
+    public Value get(){
+        return value;
     }
-     */
+
 
 
 }

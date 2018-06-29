@@ -19,7 +19,8 @@ public class OptionalType implements Type {
     }
 
     public Type getElemType() {
-        //todo forse deve essere ricorsivo
+        if(elemType instanceof OptionalType)
+            return ((OptionalType) elemType).getElemType();
         return elemType;
     }
 
