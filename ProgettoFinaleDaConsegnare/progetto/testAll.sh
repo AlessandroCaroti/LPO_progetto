@@ -1,20 +1,21 @@
 #!/bin/bash
 
 SRC_ROOT='./interpreter'
-TEST_IN_ROOT='./testInput'
+TEST_INPUT='./testInput'
 
-OUT_ROOT='./out'
-OUT_CLASS="${OUT_ROOT}/class"
-OUT_TEST="${OUT_ROOT}/test"
+OUT_TEST="./testOutput"
 
 JAVA_COMPILER='javac'
 PACKAGE='interpreter'
 
-mkdir -p "$OUT_CLASS"
-mkdir -p "$OUT_TEST"
+mkdir -p ${OUT_TEST}
 
-printf "%s -d %s %s/Main.java\n" "${JAVA_COMPILER}" "${OUT_CLASS}" "${SRC_ROOT}"
+printf "%s %s/Main.java\n" "${JAVA_COMPILER}" "${SRC_ROOT}"
 ${JAVA_COMPILER} ${SRC_ROOT}/Main.java
 
-printf "java interpreter.Main\n"
-java interpreter.Main
+for filename in ${TEST_INPUT}/*.txt; do
+    name=${filename##*/}
+    base=${name%.txt}
+    printf "java interpreter.Main -i %s -o %s\n" "$filename" "${OUT_TEST}/${base}_OUT.txt"
+    java interpreter.Main -i $filename -o "${OUT_TEST}/${base}_OUT.txt"
+done
