@@ -172,7 +172,7 @@ public class StreamParser implements Parser {
 
 	private Exp parseEquivalent() throws ParserException {
         Exp exp = parsePrefix();
-        if(tokenizer.tokenType() == EQUIVALENT){
+        while (tokenizer.tokenType() == EQUIVALENT){
             tryNext();
             exp = new Equivalent(exp, parsePrefix());//todo forse c'è un errore quà parsePrefix -> parseExp
         }
@@ -181,7 +181,7 @@ public class StreamParser implements Parser {
 
 	private Exp parsePrefix() throws ParserException {
 		Exp exp = parseAdd();
-		if (tokenizer.tokenType() == PREFIX) {
+		while (tokenizer.tokenType() == PREFIX) {
 			tryNext();
 			exp = new Prefix(exp, parseAdd());
 		}
