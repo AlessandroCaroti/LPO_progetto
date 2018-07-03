@@ -25,11 +25,32 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+    <leaf>
+      <file leaf-file-name="StreamParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/parser/StreamParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="79">
+              <caret line="168" column="9" lean-forward="true" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grammatica.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1258">
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interpreter/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
+            <state relative-caret-position="205">
               <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -49,8 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>INT</find>
-      <find>empty</find>
       <find>OptionalLiteral</find>
       <find>Optional</find>
       <find>parseEm</find>
@@ -79,6 +98,8 @@
       <find>PRE</find>
       <find>IfElse</find>
       <find>parseIf</find>
+      <find>parseExpSeq()</find>
+      <find>parseExpSeq</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Alessandro\Documents\GitHub\LPO_progetto\ProgettoFinaleLPO\src\lab11_05_08\visitors</dir>
@@ -127,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/lab11_05_08/parser/StreamParser.java" />
         <option value="$PROJECT_DIR$/src/lab11_05_08/Main.java" />
         <option value="$PROJECT_DIR$/src/interpreter/Main.java" />
+        <option value="$PROJECT_DIR$/src/interpreter/parser/StreamParser.java" />
       </list>
     </option>
   </component>
@@ -149,8 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,21 +183,12 @@
               <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
               <item name="Specifiche" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgettoFinaleLPO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgettoFinaleLPO" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="interpreter" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="interpreter.Main" />
       <module name="ProgettoFinaleLPO" />
@@ -245,6 +256,10 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainVecchio" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -266,7 +281,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73791000" />
+    <option name="totallyTimeSpent" value="74492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -279,48 +294,48 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.41025642" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.15954416" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50067115" side_tool="true" weight="0.42877492" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.3945869" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
-      <window_info anchor="bottom" id="Bucklescript" order="7" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19800569" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17651007" />
+      <window_info anchor="bottom" id="Bucklescript" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.502849" />
+      <window_info id="UI Designer" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
+      <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Palette" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19530201" />
-      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="19" show_stripe_button="false" />
       <window_info anchor="bottom" id="Bucklescript" order="17" />
-      <window_info anchor="bottom" id="Terminal" order="18" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19530201" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="20" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="16" sideWeight="0.49932885" weight="0.17806268" />
-      <window_info anchor="bottom" id="Version Control" order="19" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49932885" visible="true" weight="0.55413103" />
       <window_info id="Designer" order="7" />
       <window_info id="UI Designer" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="20" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="18" />
       <window_info anchor="bottom" id="Event Log" order="21" sideWeight="0.50067115" side_tool="true" weight="0.19373219" />
+      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.32905984" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="22" weight="0.32905984" />
       <window_info anchor="right" id="Maven Projects" order="10" />
       <window_info id="Favorites" order="9" side_tool="true" />
@@ -360,10 +375,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/interpreter/parser/StreamParser.java</url>
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="35" />
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -579,24 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding>
-            <element signature="e#2292#2293#0" expanded="true" />
-            <element signature="e#2325#2326#0" expanded="true" />
-            <element signature="e#2472#2473#0" expanded="true" />
-            <element signature="e#2503#2504#0" expanded="true" />
-            <element signature="e#2724#2725#0" expanded="true" />
-            <element signature="e#2775#2776#0" expanded="true" />
-            <element signature="e#2826#2827#0" expanded="true" />
-            <element signature="e#2871#2872#0" expanded="true" />
-            <element signature="e#3598#3599#0" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3697#3698#0" expanded="true" />
-            <element signature="e#3752#3753#0" expanded="true" />
-            <element signature="e#3804#3805#0" expanded="true" />
-            <element signature="e#3851#3852#0" expanded="true" />
-            <element signature="e#4002#4003#0" expanded="true" />
-            <element signature="e#4064#4065#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -607,22 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
-          <folding>
-            <element signature="e#2480#2481#0" expanded="true" />
-            <element signature="e#2497#2498#0" expanded="true" />
-            <element signature="e#2562#2563#0" expanded="true" />
-            <element signature="e#2589#2590#0" expanded="true" />
-            <element signature="e#2646#2647#0" expanded="true" />
-            <element signature="e#2691#2692#0" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4214#4215#0" expanded="true" />
-            <element signature="e#4261#4262#0" expanded="true" />
-            <element signature="e#4312#4313#0" expanded="true" />
-            <element signature="e#4359#4360#0" expanded="true" />
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4528#4529#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,13 +624,6 @@
             <element signature="e#696#697#0" expanded="true" />
             <element signature="e#773#774#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -702,9 +684,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prova.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/prova.txt" />
     <entry file="file://$PROJECT_DIR$/src/interpreter/MainVecchio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -712,35 +692,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interpreter/parser/StreamParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interpreter/parser/StreamTokenizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2228#2229#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/interpreter/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
+        <state relative-caret-position="205">
           <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/parser/StreamParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="168" column="9" lean-forward="true" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Specifiche/grammatica.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
