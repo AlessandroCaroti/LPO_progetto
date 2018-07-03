@@ -19,14 +19,14 @@ public class OptionalType implements Type {
 
     @Override
     public boolean equals(Object obj) {
-        return  this == obj ||
-                obj instanceof OptionalType;
-        /*
+        if(this == obj)
+            return true;
+        if(!(obj instanceof OptionalType))
+            return false;
         OptionalType ot = (OptionalType) obj;
         if(undefined && ot.undefined)
             return true;
         return  this.elemType.equals(ot.elemType);
-        /**/
     }
 
     @Override
