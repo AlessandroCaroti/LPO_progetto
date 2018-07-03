@@ -165,7 +165,6 @@ public class StreamParser implements Parser {
         Exp exp = parseEquivalent();
         if(tokenizer.tokenType() == AND){
             tryNext();
-            ///exp = new And(exp, parseExp());
 			exp = new And(parseExp(), exp);
         }
         return exp;
@@ -184,6 +183,7 @@ public class StreamParser implements Parser {
 		Exp exp = parseAdd();
 		while (tokenizer.tokenType() == PREFIX) {
 			tryNext();
+			//forse un errore qui
 			exp = new Prefix(exp, parseAdd());
 		}
 		return exp;
