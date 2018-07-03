@@ -181,11 +181,9 @@ public class StreamParser implements Parser {
 
 	private Exp parsePrefix() throws ParserException {
 		Exp exp = parseAdd();
-		while (tokenizer.tokenType() == PREFIX) {
+		if (tokenizer.tokenType() == PREFIX) {
 			tryNext();
-			//forse un errore qui
-			exp = new Prefix(exp, parseAdd());
-			//exp = new Prefix(parseAdd(), exp);
+			exp = new Prefix(exp, parsePrefix());
 		}
 		return exp;
 	}
