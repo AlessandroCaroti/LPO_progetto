@@ -21,6 +21,7 @@ for filename in ${TEST_INPUT}/*.txt; do
     java interpreter.Main -i $filename -o "${OUT_TEST}/${base}_OUT.txt"
 done
 
+printf "\n\n\n************************************************\nTEST FALITURE\n\n"
 for filename in ${TEST_FALITURE}/*.txt; do
     name=${filename##*/}
     base=${name%.txt}
