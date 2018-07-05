@@ -1,3 +1,0 @@
-do{
-    print 1
-}while(true)

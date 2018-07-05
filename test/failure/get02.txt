@@ -1,2 +1,0 @@
-// Dynamic error: Cannot get any value out of the empty optional value
-print get empty opt 1

@@ -1,4 +1,0 @@
-// tests do while
-var x=0;
-do{x=x+1}while(false);
-print x==1

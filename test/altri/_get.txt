@@ -1,8 +1,0 @@
-var x1 = opt 5;
-var y1 = opt 6;
-var x2 = opt x1;
-var y2 = opt x2;
-
-print get x1 * get y1;
-print get x2 == get y2;
-print get x2 == x1

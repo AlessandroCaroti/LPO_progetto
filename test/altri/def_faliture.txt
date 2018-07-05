@@ -1,2 +1,0 @@
-var x1 = 5;
-print def x1

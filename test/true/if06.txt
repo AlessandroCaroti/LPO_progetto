@@ -1,4 +1,0 @@
-// tests if_then_else
-var f=false;
-if(false){f=false}else{f=true};
-print f

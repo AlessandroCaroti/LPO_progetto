@@ -1,2 +1,0 @@
-// Static error: Found BOOL OPT, expected INT OPT
-print opt 1==opt true

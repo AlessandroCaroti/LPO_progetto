@@ -1,8 +1,0 @@
-var a  = opt opt 5;
-var aa = opt opt 5;
-var b  = opt opt 6;
-
-print a;
-print b;
-print (a==aa);
-print (a==b)

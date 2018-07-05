@@ -1,3 +1,0 @@
-// tests precedence of binary operators
-print 2==1+1 && !(2==1*1) && 1+1::[1+2]==2::[3]
-

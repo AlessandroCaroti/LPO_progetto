@@ -1,2 +1,0 @@
-// tests associativity of ==
-print false == (1 == 2)

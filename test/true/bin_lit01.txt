@@ -1,2 +1,0 @@
-// tests binary literals, && and == precedence
-print 0b0111==7 && 0B0111==7
