@@ -174,7 +174,7 @@ public class StreamParser implements Parser {
         Exp exp = parsePrefix();
         while (tokenizer.tokenType() == EQUIVALENT){
             tryNext();
-            exp = new Equivalent(exp, parsePrefix());//todo forse c'è un errore quà parsePrefix -> parseExp
+            exp = new Equivalent(exp, parsePrefix());
         }
         return exp;
 	}

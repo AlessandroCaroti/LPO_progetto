@@ -1,5 +1,9 @@
-print empty opt 1;
-print empty empty opt 1;
-print empty opt 1 == empty opt 2;
-print empty opt 1 == empty opt false;
-print empty opt 1 == opt opt 1
+var x = opt 1;
+var xx = empty x;
+var y = opt 5;
+var yy = empty empty y;
+print x;
+print y;
+print xx;
+print yy;
+print xx == yy

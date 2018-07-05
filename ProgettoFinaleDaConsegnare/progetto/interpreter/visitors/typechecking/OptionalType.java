@@ -19,19 +19,19 @@ public class OptionalType implements Type {
 
     @Override
     public boolean equals(Object obj) {
-        return this == obj || obj instanceof OptionalType;
-        /*
         if(this == obj)
             return true;
         if(!(obj instanceof OptionalType))
             return false;
         OptionalType ot = (OptionalType) obj;
-        if(undefined && ot.undefined)
-            return true;
-        if(undefined || ot.undefined)
-            return false;
-        return  this.elemType.equals(ot.elemType);
-        */
+        Type t1, t2;
+        t1 = (this.undefined) ? this.elemType.getOptElemType() : this.elemType;
+        t2 = (ot.undefined)   ? ot.elemType.getOptElemType()   : ot.elemType;
+        System.out.println(this.elemType+" - "+ot.elemType);
+        System.out.println(this.undefined+" - "+ot.undefined);
+        System.out.println(t1+" - "+t2);
+        return t1.equals(t2);
+        
     }
 
     @Override
