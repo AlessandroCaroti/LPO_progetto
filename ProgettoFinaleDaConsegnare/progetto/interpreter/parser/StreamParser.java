@@ -271,7 +271,10 @@ public class StreamParser implements Parser {
 	}
 
 	private OptionalLiteral parseEmpty() throws ParserException{
-	    consume(EMPTY);
+		//consuma tutti i token di tipo EMPTY
+		do{
+			tryNext();
+		}while(tokenizer.tokenType() == EMPTY);
         return new OptionalLiteral(parseAtom(), true);
     }
 

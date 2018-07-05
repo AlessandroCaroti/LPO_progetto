@@ -6,7 +6,7 @@ public class OptionalType implements Type {
     private final Type elemType;
     private final boolean undefined;
 
-    public static final String TYPE_NAME = "OPTIONAL";
+    public static final String TYPE_NAME = "OPT";
 
     public OptionalType(Type elemType, boolean undefined) {
         this.elemType = requireNonNull(elemType);
