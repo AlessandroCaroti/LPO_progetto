@@ -19,23 +19,23 @@ public class OptionalType implements Type {
 
     @Override
     public boolean equals(Object obj) {
+        OptionalType ot;        
+        Type t1, t2;
         if(this == obj)
             return true;
         if(!(obj instanceof OptionalType))
             return false;
-        OptionalType ot = (OptionalType) obj;
-        Type t1, t2;
+        ot = (OptionalType) obj;
         t1 = (this.undefined) ? this.elemType.getOptElemType() : this.elemType;
         t2 = (ot.undefined)   ? ot.elemType.getOptElemType()   : ot.elemType;
         System.out.println(this.elemType+" - "+ot.elemType);
         System.out.println(this.undefined+" - "+ot.undefined);
         System.out.println(t1+" - "+t2);
-        return t1.equals(t2);
-        
+        return t1.equals(t2);        
     }
 
     @Override
     public String toString() {
-        return (undefined) ? ("EMPTY VALUE") : (elemType + " " + TYPE_NAME);
+        return ((undefined) ? ("EMPTY") : (elemType)) + " " + TYPE_NAME;
     }
 }

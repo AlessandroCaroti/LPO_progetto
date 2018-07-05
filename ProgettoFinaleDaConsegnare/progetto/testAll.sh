@@ -9,6 +9,8 @@ OUT_TEST="./testOutput"
 JAVA_COMPILER='javac'
 PACKAGE='interpreter'
 
+./clean.sh
+
 mkdir -p ${OUT_TEST}
 
 printf "%s %s/Main.java\n" "${JAVA_COMPILER}" "${SRC_ROOT}"
