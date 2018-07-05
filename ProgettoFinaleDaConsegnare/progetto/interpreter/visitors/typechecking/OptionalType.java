@@ -27,10 +27,7 @@ public class OptionalType implements Type {
             return false;
         ot = (OptionalType) obj;
         t1 = (this.undefined) ? this.elemType.getOptElemType() : this.elemType;
-        t2 = (ot.undefined)   ? ot.elemType.getOptElemType()   : ot.elemType;
-        System.out.println(this.elemType+" - "+ot.elemType);
-        System.out.println(this.undefined+" - "+ot.undefined);
-        System.out.println(t1+" - "+t2);
+        t2 = (ot.undefined)   ? ot.elemType.getOptElemType()   : ot.elemType;;
         return t1.equals(t2);        
     }
 

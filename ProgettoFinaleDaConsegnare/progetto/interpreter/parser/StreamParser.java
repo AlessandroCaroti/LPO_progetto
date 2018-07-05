@@ -52,20 +52,12 @@ public class StreamParser implements Parser {
 	public Prog parseProg() throws ParserException {
 		tryNext(); // one look-ahead symbol
 		Prog prog = new ProgClass(parseStmtSeq());
-
-        //TODO rimmuovere stampa di test
-		System.out.println("********************************\n\n");
-
 		match(EOF);
 		return prog;
 	}
 
 	private StmtSeq parseStmtSeq() throws ParserException {
 		Stmt stmt = parseStmt();
-
-		//TODO rimmuovere stampa di test
-        System.out.println(stmt.toString());
-
 		if (tokenizer.tokenType() == STMT_SEP) {
 			tryNext();
 			return new MoreStmt(stmt, parseStmtSeq());
