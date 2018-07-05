@@ -1,8 +1,8 @@
 #!/bin/bash
 
 SRC_ROOT='./interpreter'
-TEST_INPUT='./testInput'
-TEST_FALITURE='./failure'
+TEST_INPUT='./test/correct'
+TEST_FALITURE='./test/failure'
 
 OUT_TEST="./testOutput"
 
@@ -16,6 +16,7 @@ mkdir -p ${OUT_TEST}
 printf "%s %s/Main.java\n" "${JAVA_COMPILER}" "${SRC_ROOT}"
 ${JAVA_COMPILER} ${SRC_ROOT}/Main.java
 
+printf "\n\n\n************************************************\nTEST CORRECT\n\n"
 for filename in ${TEST_INPUT}/*.txt; do
     name=${filename##*/}
     base=${name%.txt}
