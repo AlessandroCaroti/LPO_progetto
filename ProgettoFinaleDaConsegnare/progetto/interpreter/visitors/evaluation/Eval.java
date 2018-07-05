@@ -116,7 +116,7 @@ public class Eval implements Visitor<Value> {
 	@Override
 	public Value visitOptionalLiteral(Exp exp, boolean empty) {
         if(empty)
-            return new EmptyValue();
+				return OptValue.empty;
 		return new OptValue(exp.accept(this));
 	}
 

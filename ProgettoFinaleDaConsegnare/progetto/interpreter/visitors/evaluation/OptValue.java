@@ -2,6 +2,8 @@ package interpreter.visitors.evaluation;
 
 public class OptValue extends PrimValue<Value>{
 
+    public static final EmptyValue empty = new EmptyValue();
+
     protected OptValue(Value value) {
         super(value);
     }
@@ -29,7 +31,5 @@ public class OptValue extends PrimValue<Value>{
     public Value get(){
         return value;
     }
-
-
 
 }
